@@ -30,6 +30,10 @@ blogApp.config(['$routeProvider',
         templateUrl: 'partials/aspnet-running-for-free.html',
         controller: 'PostDetailCtrl'
       }).
+      when('/posts/atom',{
+         templateUrl: 'partials/atom.html',
+         controller: 'PostDetailCtrl'
+      }).
       otherwise({
         redirectTo: '/posts'
       });
