@@ -34,6 +34,10 @@ blogApp.config(['$routeProvider',
          templateUrl: 'partials/atom.html',
          controller: 'PostDetailCtrl'
       }).
+      when('/posts/bower',{
+         templateUrl: 'partials/bower.html',
+         controller: 'PostDetailCtrl'
+      }).
       otherwise({
         redirectTo: '/posts'
       });
