@@ -7,8 +7,8 @@ var blogApp = angular.module('blogApp', [
   'blogControllers'
 ]);
 
-blogApp.config(['$routeProvider',
-  function($routeProvider) {
+blogApp.config(['$routeProvider', '$locationProvider',
+  function($routeProvider,$locationProvider) {
     $routeProvider.
       when('/posts', {
         templateUrl: 'partials/page-list.html',
@@ -41,4 +41,6 @@ blogApp.config(['$routeProvider',
       otherwise({
         redirectTo: '/posts'
       });
+
+        $locationProvider.html5Mode(true);
   }]);
