@@ -7,6 +7,10 @@
     font-family: LatoHairline;
     src: url(Lato-Hairline.ttf);
 }
+@font-face {
+    font-family: LatoRegular;
+    src: url(Lato-Regular.ttf);
+}
 body {
 
    font-family: LatoThin;
@@ -14,7 +18,12 @@ body {
 
 }
 
+.post, .home {
+   font-family: LatoRegular;
+
+}
+
 .btn-sm, .btn-group-sm>.btn {
 
-border-radius: 0px;
+    border-radius: 0px;
 }
