@@ -3,7 +3,7 @@ title: Not a Blog
 email: patrick@pdsullivan.com
 description: > # this means to ignore newlines until "baseurl:"
 baseurl: "" # the subpath of your site, e.g. /blog/
-url: "http://blog.pdsullivan.com/" # the base hostname & protocol for your site
+url: "http://blog.pdsullivan.com" # the base hostname & protocol for your site
 twitter_username: patsully88
 github_username:  pdsullivan
 
