@@ -5,6 +5,9 @@ date:   2014-09-10
 categories: posts
 ---
 
+
+![]({{ site.url }}{{ site.baseurl }}/assets/atomlogo.png)
+
 Why not, I am now using a new text editor. It is called [Atom][atomio] and it is cool.
 
 Built by [GitHub][githublink], Atom is very customizable text editor with themes and packages you can add as needed. Atom has a layout that is similar to SublimeText. Out of the box it is fully functional as a solid text editor, which is great if you have ever had to go find packages for other text editors that most of which can’t be installed with out adding the package that installs the packages…it gets a little complicated.
@@ -16,7 +19,7 @@ In the past I have used Notepad++ on windows machines and SublimeText (2&3) on a
 The UI theme I am using in the shot below is “Trendy Light” which is a flat light UI theme I downloaded.
 
 
-![Bower]({{ site.url }}{{ site.baseurl }}/assets/atomwindow.png)
+![]({{ site.url }}{{ site.baseurl }}/assets/atomwindow.png)
 
 
 [atomio]:      http://atom.io
