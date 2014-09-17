@@ -11,6 +11,10 @@
     font-family: LatoRegular;
     src: url(Lato-Regular.ttf);
 }
+@font-face {
+    font-family: LatoLight;
+    src: url(Lato-Light.ttf);
+}
 body {
 
    font-family: LatoThin;
@@ -18,8 +22,13 @@ body {
 
 }
 
-.post, .home {
+.post {
    font-family: LatoRegular;
+
+}
+
+.home {
+   font-family: LatoLight;
 
 }
 
