@@ -1,0 +1,78 @@
+<footer class="site-footer">
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">
+        Hosted on <a href="http://pages.github.com"><i class="fa fa-github"></i> GitHub Pages</a> running <a href="http://jekyllrb.com/">Jekyll</a>.
+    </h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col  footer-col-1">
+        <ul class="contact-list">
+          <!--<li>{{ site.title }}</li>-->
+          <li><a href="mailto:{{ site.email }}">{{ site.email }}</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col  footer-col-3">
+        <ul class="social-media-list">
+          {% if site.github_username %}
+          <li>
+            <a href="https://github.com/{{ site.github_username }}" target="_blank">
+              <i class="fa fa-github"></i>
+
+              <span class="username">{{ site.github_username }}</span>
+            </a>
+          </li>
+          {% endif %}
+
+          {% if site.twitter_username %}
+          <li>
+            <a href="https://twitter.com/{{ site.twitter_username }}" target="_blank">
+              <i class="fa fa-twitter"></i>
+
+              <span class="username">{{ site.twitter_username }}</span>
+            </a>
+          </li>
+          {% endif %}
+
+          <li>
+            <a href="https://www.instagram.com/patsully88" target="_blank">
+              <i class="fa fa-instagram"></i>
+
+              <span class="username">patsully88</span>
+            </a>
+          </li>
+
+
+            <li>
+              <a href="http://www.linkedin.com/pub/patrick-sullivan/23/111/539" target="_blank">
+                <i class="fa fa-linkedin "></i>
+
+                <span class="username">Patrick Sullivan</span>
+              </a>
+            </li>
+
+            <li>
+              <a href="http://stackoverflow.com/users/1483002/drop-table-users" target="_blank">
+                <i class="fa fa-stack-overflow "></i>
+
+                <span class="username">drop table users</span>
+              </a>
+            </li>
+
+
+
+
+        </ul>
+      </div>
+
+      <div class="footer-col  footer-col-3">
+        <!--<p class="text">{{ site.description }}</p>-->
+
+      </div>
+    </div>
+
+  </div>
+
+</footer>
