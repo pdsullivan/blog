@@ -6,9 +6,10 @@ categories: posts
 ---
 
 
-![]({{ site.url }}{{ site.baseurl }}/assets/atomlogo.png)
 
 Why not, I am now using a new text editor. It is called [Atom][atomio] and it is cool.
+
+![]({{ site.url }}{{ site.baseurl }}/assets/atomlogo.png)
 
 Built by [GitHub][githublink], Atom is very customizable text editor with themes and packages you can add as needed. Atom has a layout that is similar to SublimeText. Out of the box it is fully functional as a solid text editor, which is great if you have ever had to go find packages for other text editors that most of which can’t be installed with out adding the package that installs the packages…it gets a little complicated.
 
