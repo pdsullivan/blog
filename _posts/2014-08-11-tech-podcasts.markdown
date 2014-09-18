@@ -26,10 +26,10 @@ As a pretty avid StackOverflow user I enjoy listening to this podcast when it co
 
 ### [TWIT Pocdast Familly][twit]
 I lumped these under one heading but my favorites are as follows (kind of in order...):
-*TWIT (This Week in Tech)
-*Windows Weekly
-*MacBreak Weekly
-*Tech News Today (TNT)
+* TWIT (This Week in Tech)
+* Windows Weekly
+* MacBreak Weekly
+* Tech News Today (TNT)
 
 
 
