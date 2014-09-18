@@ -1,5 +1,6 @@
 ---
 layout: post
+comments: true
 title:  "How I got my Website Running for Free"
 date:   2014-09-04
 categories: posts
