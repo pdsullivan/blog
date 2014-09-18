@@ -1,5 +1,6 @@
 ---
 layout: post
+comments: true
 title:  "Mailbox - OS X Mail Client"
 date:   2014-08-19
 categories: posts
