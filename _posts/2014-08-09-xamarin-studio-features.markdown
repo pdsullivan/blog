@@ -1,5 +1,6 @@
 ---
 layout: post
+comments: true
 title:  "My Favorite Xamarin Studio Features"
 date:   2014-08-09
 categories: posts
