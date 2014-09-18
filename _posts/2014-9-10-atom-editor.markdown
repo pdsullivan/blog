@@ -1,5 +1,6 @@
 ---
 layout: post
+comments: true
 title:  "ATOM Editor"
 date:   2014-09-10
 categories: posts
