@@ -1,5 +1,6 @@
 ---
 layout: post
+comments: true
 title:  "My Tech Podcast Recomendations"
 date:   2014-08-11
 categories: posts
