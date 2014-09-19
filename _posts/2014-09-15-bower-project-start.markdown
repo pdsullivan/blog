@@ -7,8 +7,7 @@ categories: posts
 ---
 
 
-![Bower]({{ site.url }}{{ site.baseurl }}/assets/bowerlogo.png)
-
+[![Bower]({{ site.url }}{{ site.baseurl }}/assets/bowerlogo.png)](http://bower.io)
 
 Ok, I was watching a Pluralsight on [Building AngularJS and Node.js Apps with the MEAN Stack][pluralsightcourse] the other day by Joe Eames and he started using Bower and I was like, “That looks cool I wonder what that is”. Boy was I in for a treat. Here is a quick overview on starting a new project with Bower.
 
