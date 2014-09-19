@@ -9,6 +9,9 @@ categories: posts
 
 I like listening to podcasts on the way to and from work. Just to give it a shoutout right now I am using the Overcast app for iPhone that came out recently and I am loving it. Here are some of my goto tech podcasts.
 
+### [StartUp Podcast][hearstartup]
+This is a series about Alex Blumberg starting a company that does podcasting. He is recording conversations and documenting his journey along the way. Its really funny and interesting, I am hooked.
+
 ### [.NET Rocks][dotnetrocks]
 Dot NET Rocks seems to me to be the grand poobah of tech podcasts specifically in the .net dev circle. Carl and Richard are great at having interesting guests on the show to talk about all sorts of things. The geek out shows which focus on things outside of the .net development world are all worth listening to and are great fun.
 
@@ -33,7 +36,7 @@ I lumped these under one heading but my favorites are as follows (kind of in ord
 * Tech News Today (TNT)
 
 
-
+[hearstartup]: http://hearstartup.com/
 [dotnetrocks]: http://dotnetrocks.com
 [hans]: http://hanselminutes.com
 [herdingcode]: http://herdingcode.com
