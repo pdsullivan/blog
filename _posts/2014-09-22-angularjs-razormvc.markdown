@@ -44,7 +44,7 @@ Then on the view you can simply declare a global JavaScript variable. I also add
 
 
 
-{% highlight c# %}
+{% highlight html %}
 
 
 @model AngularBootstrapingDataExample.Models.Order
