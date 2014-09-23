@@ -111,7 +111,7 @@ Then on the view you can simply declare a global JavaScript variable. I also add
 
 
 
-Then, here is my basic angular app with a controller (in the same JS file just for readability sake). See where the `$scope.products` get set the global variable ` bootstrappedProducts` that we set from the data in the razor view. And I have an empty function where future functionality can be added.
+Then, here is my basic angular app with a controller (in the same JS file just for readability sake). See where the `$scope.products` get set the global variable `bootstrappedProducts` that we set from the data in the razor view. And I have an empty function where future functionality can be added.
 
 
 
@@ -154,7 +154,7 @@ And then I can see my dropdown is populated with the items I specified in the `n
 
 ![]({{ site.url }}{{ site.baseurl }}/assets/angularbootstrapdatadropdown.jpg)
 
-Then to see it all in action I use Batarang to look at the scope to see that the `$scopt.products` contains all my products, then if I select an option in the dropdown you can see the `SelectedProduct` is set to the object out of the products array that you selected in the dropdown. This can be very useful because it data binds the whole object and not just the `Id` or value that is specified in the select element.
+Then to see it all in action I use Batarang to look at the scope to see that the `$scope.products` contains all my products, then if I select an option in the dropdown you can see the `SelectedProduct` is set to the object out of the products array that you selected in the dropdown. This can be very useful because it data binds the whole object and not just the `Id` or value that is specified in the select element.
 
 
 
