@@ -1,7 +1,7 @@
 ---
 layout: post
 comments: true
-title:  "AngularJS - Bootstrapping Data using ASP.NET MVC and Razor View"
+title:  "AngularJS - Bootstrapping Data using ASP.NET MVC and Razor Views"
 date:   2014-09-22
 categories: posts
 ---
