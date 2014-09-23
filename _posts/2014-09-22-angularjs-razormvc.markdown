@@ -7,6 +7,9 @@ categories: posts
 ---
 
 
+![]({{ site.url }}{{ site.baseurl }}/assets/AngularJS-large.png)
+
+
 I found myself recently working on a MVC 5 project with Razor views, and for some reason I wanted to use AngularJS. Well not for just any reason, because AngularJS awesome! This situation is one I can imagine is fairly common as many people start working with client side JavaScript frameworks. In my case I started working with AngularJS a few months ago and for one reason or another it has just stuck with me and has become sort of a go to for me.
 
 This solution is not very complicated and seems to work fairly well for what I needed. I will demonstrate a simple example below where I use some data passed from the controller and data bind a dropdown using AngularJS.
