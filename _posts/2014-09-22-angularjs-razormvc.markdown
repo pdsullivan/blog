@@ -4,6 +4,7 @@ comments: true
 title:  "AngularJS - Bootstrapping Data using ASP.NET MVC and Razor Views"
 date:   2014-09-22
 categories: posts
+SocialImage: http://blog.pdsullivan.com/assets/AngularJS-large.png
 ---
 
 I found myself recently working on a MVC 5 project with Razor views, and for some reason I wanted to use AngularJS. Well not for just any reason, because AngularJS awesome!
