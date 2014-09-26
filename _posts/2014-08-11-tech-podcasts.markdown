@@ -23,6 +23,8 @@ I like Scott Hanselman and enjoy hearing his thoughts on different things. His p
 ### [Herding Code][herdingcode]
 This podcast does not have has many episodes as some of the others but the ones that do come out are deffinatly worth a listen. K. Scott Allen from odetocode.com is a cohost on this show and he is one of my favorie authors on pluralsight.
 
+### [Yet Another Podcast][yap]
+By Jesse Liberty. Lots of .net and web dev talk.
 
 ### [StackExchange Podcast][stackexchange]
 As a pretty avid StackOverflow user I enjoy listening to this podcast when it comes out. The hosts are a goofy group that if for nothing else are worth listening to for the comedic value.
@@ -35,7 +37,7 @@ I lumped these under one heading but my favorites are as follows (kind of in ord
 * MacBreak Weekly
 * Tech News Today (TNT)
 
-
+[yap]: http://jesseliberty.com/podcast/
 [hearstartup]: http://hearstartup.com/
 [dotnetrocks]: http://dotnetrocks.com
 [hans]: http://hanselminutes.com
