@@ -32,7 +32,7 @@ Now I want to make a call to the github api to get my github user info. I will a
 {% gist 46839f9f5b11085966c3 %}
 
 
-Over in my html I want to display my username (pdsullivan) and actual name (Patrick Sullivan) on the screen. I will do this by adding an `h1` tag at the top of the page with `{{userData.name}}` which will access the userData object in the scope and display the name property on that object in the html. Then I will add a link and set its href to `{{userData.html_url}}` so there will be a link to my github profile on the page. Next I will add as the text of the link `{{userData.login}}` to display my username as the link text.
+Over in my html I want to display my username (pdsullivan) and actual name (Patrick Sullivan) on the screen. I will do this by adding an `h1` tag at the top of the page with `userData.name` which will access the userData object in the scope and display the name property on that object in the html. Then I will add a link and set its href to `userData.html_url` so there will be a link to my github profile on the page. Next I will add as the text of the link `{{userData.login}}` to display my username as the link text.
 
 {% gist e981757ab55ac5af4065 %}
 
@@ -77,5 +77,10 @@ And there we have it my little AngularJS for fun app.
 
 
 
-##Still to come is the repo search box and the sorting of the repos.
+
+<div class="alert alert-warning">
+<h2>
+Still to come is the repo search box and the sorting of the repos.
+</h2>
+</div>
 
