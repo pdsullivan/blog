@@ -1,7 +1,7 @@
 ---
 layout: post
 comments: true
-title:  "Simple AngularJS tutorial using an API"
+title:  "Simple AngularJS tutorial using the Github API"
 date:   2014-10-06
 categories: posts
 SocialImage: http://blog.pdsullivan.com/assets/AngularJS-large.png
@@ -10,6 +10,9 @@ SocialImage: http://blog.pdsullivan.com/assets/AngularJS-large.png
 ##[View Demo](http://pdsullivan.github.io)
 
 ##[Code on Github](https://github.com/pdsullivan/pdsullivan.github.io)
+
+
+![]({{ site.url }}{{ site.baseurl }}/assets/AngularJS-large.png)
 
 I recently was sitting in jury duty with nothing to do so I made a little AngularJS app that calls to the github api. I chose the github api because it is a nice api that has open data that you can call cross domain and you can get allot of useful data without logging in with a user.
 
