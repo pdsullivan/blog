@@ -7,9 +7,12 @@ categories: posts
 SocialImage: http://blog.pdsullivan.com/assets/AngularJS-large.png
 ---
 
-##[View Demo](http://pdsullivan.github.io)
 
-##[Code on Github](https://github.com/pdsullivan/pdsullivan.github.io)
+
+<a href="http://pdsullivan.github.io" target="_blank" class="btn btn-default btn-large"><i class="fa fa-eye"></i> View Live Demo</a>
+
+<a href="https://github.com/pdsullivan/pdsullivan.github.io" target="_blank" class="btn btn-default btn-large"><i class="fa fa-github"></i> Code on Github</a>
+
 
 
 ![]({{ site.url }}{{ site.baseurl }}/assets/angularjslogo.png)
@@ -66,7 +69,13 @@ The last thing I noticed I want to add is a loading indicator when the page is g
 
 {% gist b836f837f2985e4cf66e %}
 
-And there we have it my little AngularJS for fun app. See it live [here at pdsullivan.github.io](http://pdsullivan.github.io/) and the full code is all [here at the github repo](https://github.com/pdsullivan/pdsullivan.github.io). Thanks for reading!
+And there we have it my little AngularJS for fun app.
+
+<a href="http://pdsullivan.github.io" target="_blank" class="btn btn-default btn-large"><i class="fa fa-eye"></i> View Live Demo</a>
+
+<a href="https://github.com/pdsullivan/pdsullivan.github.io" target="_blank" class="btn btn-default btn-large"><i class="fa fa-github"></i> Code on Github</a>
+
+
 
 ##Still to come is the repo search box and the sorting of the repos.
 
