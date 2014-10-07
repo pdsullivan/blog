@@ -6,7 +6,7 @@ date:   2014-09-04
 categories: posts
 ---
 
-![]({{ site.url }}{{ site.baseurl }}/assets/azurelogo.png)
+![]({{ site.baseurl }}/assets/azurelogo.png)
 
 
 
@@ -17,7 +17,7 @@ What I ended up building was a ASP.NET Website project that delivered the html p
 I have run a view static web pages through GitHub Pages (https://pages.github.com), which is a great way to host some free static web content. And one of my favorite things about GitHub Pages is the ability to configure a custom domain name via CNAME setup for free. I have also played a bit with Azure and the free websites option through there. So I started thinking to my self that I could host my backend Web API and my front end separately with limited changes to what I am doing. Another decision I made early on that allowed me eventually do this and keep my hosting costs down was the decision to use Biggy by Rob Conery as my data store (https://github.com/robconery/biggy) and I have that running just using files in the file system.
 
 
-![]({{ site.url }}{{ site.baseurl }}/assets/githubpages.png)
+![]({{ site.baseurl }}/assets/githubpages.png)
 
 
 
@@ -27,4 +27,4 @@ So, now to doing this. To get my backend over to running on Azure was very easy,
 Now that the front end was up and running on GitHub Pages I needed to sort out the api calls from the angular that were now broken. I first just changed the URL’s in the javascript that were being used to make the ajax calls to point to the new location of the api (pdsullivan.azurewebsite.net/api/). But that didn’t get everything working, I had to deal with the cross domain issues that now were blocking the calls. After a little research I found out that ASP.Net Web API has some nice ways to enable CORS (Cross Origin Resource Sharing) in an api and it lets you specify the domains that can call to it, methods it can use, and headers. Here is a really good walkthrough that helped me out a bunch (http://www.asp.net/web-api/overview/security/enabling-cross-origin-requests-in-web-api). After that I was up and running and barring any crazy traffic my site is running for free!
 
 
-![]({{ site.url }}{{ site.baseurl }}/assets/enableCorsVS.png)
+![]({{ site.baseurl }}/assets/enableCorsVS.png)

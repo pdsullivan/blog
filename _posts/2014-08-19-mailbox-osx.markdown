@@ -7,7 +7,7 @@ categories: posts
 ---
 
 
-![]({{ site.url }}{{ site.baseurl }}/assets/mailboxNew.png)
+![]({{ site.baseurl }}/assets/mailboxNew.png)
 
 
 
@@ -17,4 +17,4 @@ Up until now in what seems to be the constant search for a decent mail client fo
 http://www.mailboxapp.com/
 
 
-![]({{ site.url }}{{ site.baseurl }}/assets/mailbox.png)
+![]({{ site.baseurl }}/assets/mailbox.png)

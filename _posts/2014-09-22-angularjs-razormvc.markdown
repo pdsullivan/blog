@@ -11,7 +11,7 @@ I found myself recently working on a MVC 5 project with Razor views, and for som
 
 
 
-![]({{ site.url }}{{ site.baseurl }}/assets/AngularJS-large.png)
+![]({{ site.baseurl }}/assets/AngularJS-large.png)
 
 
 
@@ -153,15 +153,15 @@ Then, here is my basic angular app with a controller (in the same JS file just f
 If I build my solution and had some test data into the products table then navigate to the view I have been working on. I can view the source on the page I can see where the data from the products is set into the JavaScript variable.
 
 
-![]({{ site.url }}{{ site.baseurl }}/assets/angularbootstrapdatasource.jpg)
+![]({{ site.baseurl }}/assets/angularbootstrapdatasource.jpg)
 
 And then I can see my dropdown is populated with the items I specified in the `ng-options`.
 
-![]({{ site.url }}{{ site.baseurl }}/assets/angularbootstrapdatadropdown.jpg)
+![]({{ site.baseurl }}/assets/angularbootstrapdatadropdown.jpg)
 
 Then to see it all in action I use Batarang to look at the scope to see that the `$scope.products` contains all my products, then if I select an option in the dropdown you can see the `SelectedProduct` is set to the object out of the products array that you selected in the dropdown. This can be very useful because it data binds the whole object and not just the `Id` or value that is specified in the select element.
 
 
 
 
-![]({{ site.url }}{{ site.baseurl }}/assets/angularbootstrapdatabatarang.jpg)
+![]({{ site.baseurl }}/assets/angularbootstrapdatabatarang.jpg)

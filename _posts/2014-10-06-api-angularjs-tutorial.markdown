@@ -15,7 +15,7 @@ SocialImage: http://blog.pdsullivan.com/assets/AngularJS-large.png
 
 
 
-![]({{ site.url }}{{ site.baseurl }}/assets/angularjslogo.png)
+![]({{ site.baseurl }}/assets/angularjslogo.png)
 
 Early last week I was sitting in jury duty with nothing to do so I made a little AngularJS app that calls to the github api. I chose the github api because it is a nice api that has open data that you can call cross domain and you can get allot of useful data without logging in with a user.
 
