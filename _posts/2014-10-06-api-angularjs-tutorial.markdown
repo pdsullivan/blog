@@ -14,7 +14,7 @@ SocialImage: http://blog.pdsullivan.com/assets/AngularJS-large.png
 
 ![]({{ site.url }}{{ site.baseurl }}/assets/angularjslogo.png)
 
-I recently was sitting in jury duty with nothing to do so I made a little AngularJS app that calls to the github api. I chose the github api because it is a nice api that has open data that you can call cross domain and you can get allot of useful data without logging in with a user.
+Early last week I was sitting in jury duty with nothing to do so I made a little AngularJS app that calls to the github api. I chose the github api because it is a nice api that has open data that you can call cross domain and you can get allot of useful data without logging in with a user.
 
 First I used Bower to install my packages I will most likely use Bootstrap, AngularJS, fontawesome, and octicons.
 
