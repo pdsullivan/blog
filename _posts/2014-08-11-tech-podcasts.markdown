@@ -9,6 +9,10 @@ categories: posts
 
 I like listening to podcasts on the way to and from work. Just to give it a shoutout right now I am using the Overcast app for iPhone that came out recently and I am loving it. Here are some of my goto tech podcasts.
 
+### [Adventures in Angular][aia]
+Great Podcast covering some of the news around teh AngularJS world. They have some heavy weight guests on and talk about some great stuff.
+
+
 ### [StartUp Podcast][hearstartup]
 This is a series about Alex Blumberg starting a company that does podcasting. He is recording conversations and documenting his journey along the way. Its really funny and interesting, I am hooked.
 
@@ -37,6 +41,8 @@ I lumped these under one heading but my favorites are as follows (kind of in ord
 * MacBreak Weekly
 * Tech News Today (TNT)
 
+
+[aia]: http://devchat.tv/adventures-in-angular/
 [yap]: http://jesseliberty.com/podcast/
 [hearstartup]: http://hearstartup.com/
 [dotnetrocks]: http://dotnetrocks.com
