@@ -2,12 +2,16 @@
 layout: post
 comments: true
 title:  "My Tech Podcast Recomendations"
-date:   2014-08-11
+date:   2014-10-21
 categories: posts
 ---
 
+<div class="alert alert-info">Updated on {{ page.date | date: "%b %-d, %Y" }}.</div>
 
 I like listening to podcasts on the way to and from work. Just to give it a shoutout right now I am using the Overcast app for iPhone that came out recently and I am loving it. Here are some of my goto tech podcasts.
+
+### [Javascript Jabber][jsjabber]
+I have just recently started listening to this podcast and I am liking it so far. I found it while looking for some [Ionic Framework][ionic] stuff around the web and I have listened to a few so far and I like it.
 
 ### [Adventures in Angular][aia]
 Great Podcast covering some of the news around teh AngularJS world. They have some heavy weight guests on and talk about some great stuff.
@@ -41,7 +45,8 @@ I lumped these under one heading but my favorites are as follows (kind of in ord
 * MacBreak Weekly
 * Tech News Today (TNT)
 
-
+[ionic]:http://ionicframework.com/
+[jsjabber]:http://devchat.tv/js-jabber/
 [aia]: http://devchat.tv/adventures-in-angular/
 [yap]: http://jesseliberty.com/podcast/
 [hearstartup]: http://hearstartup.com/
