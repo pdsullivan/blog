@@ -13,63 +13,56 @@ body, html {
 /*background-position: top center;*/
 /*background-size: cover;*/
 /*background-image: url(/assets/desk.jpg);*/
-background-color: #34495E;
+background-color: #303030;
 }
 
-div.jumbotron h1 {
+div.jumbotron h1, h2 {
     color: white;
 }
 
-
-
+.body-title{
+    color:#303030;
+}
+hr{
+    border-bottom-color: #303030;
+}
 </style>
 
 <link rel="stylesheet" href="lib/ionicons/css/ionicons.min.css"/>
 
 <div class=""></div>
 
-<div class="jumbotron" >
+<div class="jumbotron text-center" >
+    <h1 class="text-center">
+        Not a Blog
+        <br/>
+        <a href="http://pdsullivan.com" target="_blank">
+            <img src="https://www.gravatar.com/avatar/6c31ab5c683dcbc45085e6716d5ff176?s=128&amp;d=identicon&amp;r=PG" alt="" width="128" height="128" class="img-circle">
+        </a>
 
-      <h1 class=""><i class="ion-social-rss-outline"></i> Posts</h1>
+    </h1>
+
+
 </div>
 
 
 <div class="wrapper home">
-
-  <ul class="post-list">
+<h1 class="body-title">Posts:</h1>
+    <hr/>
+<ul class="post-list">
     {% for post in site.posts %}
-      <li>
-
-              <h1>
-                  <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
-
-                  <small class="post-meta">
-                      Posted on {{ post.date | date: "%b %-d, %Y" }} by <a href="http://pdsullivan.com" target="_blank">Patrick Sullivan</a>
-                  </small>
-
-
-              </h1>
-
-
-
-          <!--<small>{{ post.content | strip_html | truncatewords:100 }}</small>-->
-          <!--<a href="{{ post.url | prepend: site.baseurl }}"> Read More</a>-->
-      </li>
-      <hr/>
+        <li>
+            <h1>
+                <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+                <small class="post-meta">
+                    Posted on {{ post.date | date: "%b %-d, %Y" }} by <a href="http://pdsullivan.com" target="_blank">Patrick Sullivan</a>
+                </small>
+            </h1>
+        </li>
+    <hr/>
     {% endfor %}
-  </ul>
-<!--
-<div class="list-group">
-    {% for post in site.posts %}
-      <a  href="{{ post.url | prepend: site.baseurl }}" class="list-group-item">
-        <h4 class="list-group-item-heading">{{ post.title }}</h4>
-        <p class="list-group-item-text">
-        <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
-        </p>
-      </a>
-    {% endfor %}
-</div>
--->
-  <a href="{{ "/feed.xml" | prepend: site.baseurl }}"  class="lead btn btn-default ">subscribe via RSS</a>
+</ul>
+
+<a href="{{ "/feed.xml" | prepend: site.baseurl }}"  class="lead btn btn-default ">subscribe via RSS</a>
 
 </div>
