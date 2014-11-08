@@ -11,7 +11,7 @@ SocialImage: http://blog.pdsullivan.com/assets/ionic-logo.png
 
 
 
-I have been working the past few weeks (off and on) on a new app using [Ionic Framework][ionic] which is a mobile development framework built using AngularJS on top of Cordova to access native API's for the different platforms. Its pretty great, they say it better than me:
+I have been working the past few weeks (off and on) on a new app using [Ionic Framework][ionic] which is a mobile development framework built using AngularJS on top of Cordova to access native API's for the different platforms. Its pretty great, they explain it better than me:
 
 >Ionic is a powerful HTML5 native app development framework that helps you build native-feeling mobile apps all with web technologies like HTML, CSS, and Javascript.
 
