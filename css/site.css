@@ -28,7 +28,7 @@ body {
 }
 
 .home {
-   font-family: LatoLight;
+   font-family: LatoThin;
 
 }
 
@@ -50,4 +50,21 @@ border-color: #FFFFFF;
 
 .page-content {
 padding: 0px 0px 30px 0px;
+}
+.navbar-default .navbar-brand {
+    /*color: whitesmoke;*/
+}
+
+.jumbotron > a  {
+    color: lightgray;
+}
+
+body, html {
+    /*height: 100%;*/
+}
+.body-title{
+    color:#303030;
+}
+hr{
+    border-bottom-color: #303030;
 }

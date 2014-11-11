@@ -1,50 +1,31 @@
 ---
 layout: default
+hideheader: yes
 ---
 
-<style >
-body, html {
-/*height: 100%;*/
-}
 
-
-.body-title{
-    color:#303030;
-}
-hr{
-    border-bottom-color: #303030;
-}
-</style>
-<script>
-//    window.onload = function () {
-//
-//        document.getElementById("navTopArea").style.display = 'none';
-//    };
-</script>
 <link rel="stylesheet" href="lib/ionicons/css/ionicons.min.css"/>
 
 <div class=""></div>
 
 <div class="jumbotron text-center" >
     <h1 class="text-center">
-        Not a Blog
-        <br/>
         <a href="http://pdsullivan.com" target="_blank">
             <img src="https://www.gravatar.com/avatar/6c31ab5c683dcbc45085e6716d5ff176?s=128&amp;d=identicon&amp;r=PG" alt="" width="128" height="128" class="img-circle">
         </a>
-
+        <br/>
+        Not a Blog
     </h1>
-
-
+    <i class="fa fa-pencil"></i> & <i class="fa fa-code"></i> by <a class="page-link" target="_blank" href="http://www.pdsullivan.com">Patrick Sullivan</a>
 </div>
 
 
 <div class="wrapper home">
-<h1 class="body-title">Posts:</h1>
-    <hr/>
+<!--<h1 class="body-title">Posts:</h1>-->
+    <!--<hr/>-->
 <ul class="post-list">
     {% for post in site.posts %}
-        <li>
+        <li class="post-item">
             <h1>
                 <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
                 <small class="post-meta">
@@ -55,7 +36,5 @@ hr{
     <hr/>
     {% endfor %}
 </ul>
-
 <a href="{{ "/feed.xml" | prepend: site.baseurl }}"  class="lead btn btn-default ">subscribe via RSS</a>
-
 </div>
