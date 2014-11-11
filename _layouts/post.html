@@ -8,13 +8,17 @@ layout: default
     <small class="post-meta">
         By <a href="http://pdsullivan.com" target="_blank"> Patrick Sullivan</a> on {{ page.date | date: "%b %-d, %Y" }}{% if page.author %} • {{ page.author }}{% endif %}{% if page.meta %} • {{ page.meta }}{% endif %}
     </small>
+
+
 </div>
+
+
 <div class="wrapper post">
+
+    {% include socialButtons.html %}
 
   <article class="post-content">
     {{ content }}
   </article>
-
-
 
 </div>
