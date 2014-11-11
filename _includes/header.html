@@ -1,13 +1,14 @@
-
+{% if page.url != '/index.html' %}
 <nav id="navTopArea" class="navbar navbar-default navbar-fixed-top" role="navigation">
     <div class="">
         <div class="">
-            {% if page.url != '/index.html' %}
+
             <a class="navbar-brand" href="{{ site.baseurl }}/"><strong>{{ site.title }}</strong></a>
-            {% endif %}
+
 
         </div>
 
         <!--<p class="navbar-text navbar-right">by <a class="page-link" target="_blank" href="http://www.pdsullivan.com">Patrick Sullivan</a></p>-->
     </div>
 </nav>
+{% endif %}
