@@ -8,7 +8,8 @@ url: "http://blog.pdsullivan.com" # the base hostname & protocol for your site
 twitter_username: patsully88
 github_username:  pdsullivan
 
-exclude: ['Gemfile', 'Gemfile.lock', 'Rakefile', 'README.md']
+# exclude: ['Gemfile', 'Gemfile.lock', 'Rakefile', 'README.md']
+exclude: ['Gemfile', 'Gemfile.lock', 'README.md']
 
 # Build settings
 markdown: kramdown
