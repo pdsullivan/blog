@@ -21,4 +21,3 @@ task :publish do
     system "git push -f ghub gh-pages"
   end
 end
-
