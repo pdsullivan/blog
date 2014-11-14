@@ -35,20 +35,9 @@ angular.module('analyticsApp', [], function($interpolateProvider) {
             $http.get('http://ip-api.com/json/')
                 .success(function (data) {
 
-                    var firsttime = true;
-                    angular.forEach(data, function(k, v){
-                        if (!firsttime) {
-                            clientData += " , "
-                        }
-                        clientData += " \"" + k + "\" : \"" + v + "\"  ";
-                        firsttime = false;
-                    },null);
-
-                    clientData += " }";
                     logData.message = "PAGELOAD";
-                    logData.details = clientData.toString();
+                    logData.details = data;
                     logData.source = window.location.href.toString();
-                    //console.log('log data', logData);
                     createLogEntry();
                 });
         };
