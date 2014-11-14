@@ -119,3 +119,30 @@ hr{
     background: #0b6087;
     color: #fff
 }
+
+div.jumbotron, #navTopArea  {
+
+    background-color: #303030;
+    color:white;
+}
+
+div.jumbotron h1 {
+    color: white;
+}
+p.post-meta {
+    color: lightgray;
+}
+.site-footer {
+    background-color: #303030;
+    color:white;
+}
+.site-footer a {
+    color: #ffffff;
+}
+.site-footer a:visited{
+    color: #ffffff;
+}
+.navbar {
+
+    border: 0px solid transparent;
+}
