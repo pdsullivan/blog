@@ -1,39 +1,15 @@
 
-@font-face {
-    font-family: LatoThin;
-    src: url(Lato-Thin.ttf);
-}
-@font-face {
-    font-family: LatoHairline;
-    src: url(Lato-Hairline.ttf);
-}
-@font-face {
-    font-family: LatoRegular;
-    src: url(Lato-Regular.ttf);
-}
-@font-face {
-    font-family: LatoLight;
-    src: url(Lato-Light.ttf);
-}
 body {
-
-   font-family: LatoThin;
      background-color: #ffffff;
-
+    font-family: 'Roboto', sans-serif;
+    font-weight: 100 !important;
 }
 
 .post {
-   font-family: LatoRegular;
-/*font-family: "Helvetica Neue", Helvetica, arial, freesans, clean, sans-serif;*/
-}
-
-.home {
-   font-family: LatoThin;
-
+    font-weight: 300;
 }
 
 .btn-sm, .btn-group-sm>.btn {
-
     border-radius: 0px;
 }
 
@@ -52,7 +28,6 @@ border-color: #FFFFFF;
 padding: 0px 0px 30px 0px;
 }
 .navbar-default .navbar-brand {
-    /*color: whitesmoke;*/
 }
 
 .jumbotron > a  {
@@ -145,4 +120,8 @@ p.post-meta {
 .navbar {
 
     border: 0px solid transparent;
+}
+
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+    font-weight: 100;
 }
