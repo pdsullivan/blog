@@ -10,6 +10,7 @@ SocialImage: http://blog.pdsullivan.com/assets/unitTests.png
 
 # Unit Testing an AngularJS Ionic App with Codeship Continuous Integration, Jasmine, and Karma
 
+NOTE: For reference the project that I am working with is on GitHub [here](https://github.com/pdsullivan/ChkBook) if you would like to see the source code in its full form.
 
 I am working on an app, [ChkBook](http://pdsullivan.github.io/ChkBook/), I have blogged [about the app in the past](http://blog.pdsullivan.com/posts/2014/11/07/new-app-ionic-framework.html). I am building it with Ionic Framework and the early versions of the app are currently in the [iOS app store](https://itunes.apple.com/us/app/chkbook/id927749479?ls=1&mt=8). And I am sorry to say that because I got excited and in a hurry to ship the first version I missed writing unit tests 😬 . So I am now repenting, I am writing tests for my app. Here I will talk about how I set up the tests and run them on [Codeship](http://codeship.com).
 
