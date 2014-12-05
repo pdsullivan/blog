@@ -88,15 +88,8 @@ npm install karma-chrome-launcher
 
 {% endhighlight %}
 
-And then to run the test in the command line you can use the command (when in the root of the project directory):
 
-{% highlight Bash shell scripts %}
-
-karma start karma.conf.js --browsers Chrome --single-run
-
-{% endhighlight %}
-
-So I navigated in the terminal to my root project directory and ran `karma init` and answer the prompts to create the `karma.conf.js` config file for karma (I just accepted the defaults for the answers). Inside of the config file in the “files” section I add all the files that will need to be referenced to run the test:
+So I navigated in the terminal to my root project directory and ran `karma init` and answer the prompts to create the `karma.conf.js` config file for karma (I just accepted the defaults for the answers). Inside of the config file in the “files” section I add all the files that will need to be referenced to run the test (same files from the specrunner.html file if you have used that to run tests already):
 
 {% highlight javascript  %}
 
@@ -116,7 +109,13 @@ So I navigated in the terminal to my root project directory and ran `karma init`
 {% endhighlight %}
 
 
+And then to run the test in the command line, I am using this command below (when in the root of the project directory):
 
+{% highlight Bash shell scripts %}
+
+karma start karma.conf.js --browsers Chrome --single-run
+
+{% endhighlight %}
 
 
 
@@ -125,7 +124,7 @@ So I navigated in the terminal to my root project directory and ran `karma init`
 
 And now we will go to the internet to get this all running on [Codeship](http://codeship.com). In CodeShip I have added [my repo](https://github.com/pdsullivan/ChkBook) to a project and now its time to write the test commands.
 
-When setting up the tests in Codeship you get to set up some commands the run first that are the "Setup Commands" which is basically where I will set up my environment to run the tests in. In this section I have the following:
+When setting up the project properties in Codeship you get to set up some commands that will run first, the "Setup Commands", which will basically be where I will set up my environment in which to execute the test commands. In this section I have the following:
 
 {% highlight Bash shell scripts %}
 
@@ -138,7 +137,7 @@ npm install karma-chrome-launcher
 
 I use `npm` to install `karma` and the `karma-cli` for running the karma commands. Then I also install `karma-jasmine` to run the jasmine tests that I have written in the spec and then `karma-chrome-launcher` which will give me the ability to run the tests in a browser even from the command line in the Codeship environment.
 
-After the setup commands it is time to run the actual test commands. The command I will run will need to just start karma and tell it to use chrome to run the tests once. Here is my command:
+After the setup commands it is time to set up the actual test commands. The command I will run will neet to start karma (the `karma.conf.js` file) and tell it to use chrome to run the tests once. Here is my command that will execute the tests:
 
 {% highlight Bash shell scripts %}
 
@@ -146,7 +145,6 @@ if [ "$CI_BRANCH" == "master" ]; then karma start karma.conf.js --browsers Chrom
 
 {% endhighlight %}
 
-I use the if statement in the command to only run the tests on my master branch which for now is fine because I am doing my development on the ionic app in the master branch and this also prevents me from running tests when I check in changes to my gh-pages branch which is the Github Pages branch for the [project's web page](http://pdsullivan.github.io/ChkBook).
+I use the if statement in the command to only run the tests on my master branch which for now is fine because I am doing my development on the ionic app in the master branch. This also prevents me from running tests when I check in changes to my gh-pages branch which is the Github Pages branch for the [project's web page](http://pdsullivan.github.io/ChkBook).
 
-
-###
+Thanks for reading and please comment or contact me if there are any questions or if anything is not working as I described.
