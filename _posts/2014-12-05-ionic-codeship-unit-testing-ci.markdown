@@ -147,4 +147,8 @@ if [ "$CI_BRANCH" == "master" ]; then karma start karma.conf.js --browsers Chrom
 
 I use the if statement in the command to only run the tests on my master branch which for now is fine because I am doing my development on the ionic app in the master branch. This also prevents me from running tests when I check in changes to my gh-pages branch which is the Github Pages branch for the [project's web page](http://pdsullivan.github.io/ChkBook).
 
+The result looks like this when Codeship runs the tests (and they all pass which does not always happen 😉...).
+
+![Codeship UI](http://blog.pdsullivan.com/assets/chkbookcodeship.png)
+
 Thanks for reading and please comment or contact me if there are any questions or if anything is not working as I described.
