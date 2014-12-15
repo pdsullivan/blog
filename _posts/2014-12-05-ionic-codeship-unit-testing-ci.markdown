@@ -1,7 +1,7 @@
 ---
 layout: post
 comments: true
-title:  “Unit Testing an AngularJS Ionic App with Codeship Continuous Integration, Jasmine, and Karma”
+title: Unit Testing an AngularJS Ionic App with Codeship Continuous Integration, Jasmine, and Karma
 date:   2014-12-05
 categories: posts
 SocialImage: http://blog.pdsullivan.com/assets/unitTests.png
