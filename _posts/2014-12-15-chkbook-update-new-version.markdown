@@ -43,6 +43,11 @@ New
 </div>
 
 # Moving Forward
-I have allot of cool ideas moving forward, and I have received some really great feedback from users and I will try to work on things based off what people would like to see. One thing that I am working on currently is some application settings that will let you customize some of the functionality of that app in some places that might save some time. One main thing I am going to try and put into the settings will be the option to lock the app down with a password, so when you open the app it will ask for a password before you can see data. I will also put in a setting to auto clear transactions when they are created because there are some users where this will save them an extra step when creating transactions on accounts.
+I have allot of cool ideas moving forward, and I have received some really great feedback from users and I will try to work on things based off what people would like to see. One thing that I am working on currently is some application settings that will let you customize some of the functionality of that app in some places that might save some time. Another feature that was suggested by my co-worker Jacob Duncan that I am going to try and put into the settings will be the option to lock the app down with a password, so when you open the app it will ask for a password before you can see data. I will also put in a setting to auto clear transactions when they are created because there are some users where this will save them an extra step when creating transactions on accounts.
 
 Please leave a comment on this post or leave an app review if you have any ideas of ways you would like to see ChkBook improved. Thanks!
+
+
+
+
+
