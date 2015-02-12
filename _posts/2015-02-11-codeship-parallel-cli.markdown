@@ -1,7 +1,7 @@
 ---
 layout: post
 comments: true
-title: Speed up Build Times with Codeship's ParallelCLI
+title: Speed up Build Times with Codeship's ParallelCI
 date:   2015-02-11
 categories: posts
 SocialImage: http://blog.pdsullivan.com/assets/codeship-parallel-cli-tests-setup.png
@@ -16,9 +16,9 @@ SocialImage: http://blog.pdsullivan.com/assets/codeship-parallel-cli-tests-setup
 <br/>
 
 
-##ParallelCLI
+##ParallelCI
 
-I was recently given access to a new feature from [Codeship](http://www.codeship.com), called [**ParallelCLI**](https://codeship.com/features/parallelci). ParallelCLI lets you run tests in parallel to reduce the overall time that is spent during a build running tests. Basically, I think its pretty cool :), so here is a little overview about it.
+I was recently given access to a new feature from [Codeship](http://www.codeship.com), called [**ParallelCI**](https://codeship.com/features/parallelci). ParallelCI lets you run tests in parallel to reduce the overall time that is spent during a build running tests. Basically, I think its pretty cool :), so here is a little overview about it.
 
 
 <div class="row ">
@@ -27,7 +27,7 @@ I was recently given access to a new feature from [Codeship](http://www.codeship
 <br/>
 <br/>
 
-> **ParallelCLI** allows you to split your test commands across multiple build VMs to speed up your build time.
+> **ParallelCI** allows you to split your test commands across multiple build VMs to speed up your build time.
 >
 -- Codeship
 
@@ -65,6 +65,6 @@ Thanks for reading!
 
 
 ###Links:
-- ####[ParallelCLI](https://codeship.com/features/parallelci)
+- ####[ParallelCI](https://codeship.com/features/parallelci)
 
-- ####[ParallelCLI Docs](https://codeship.com/documentation/continuous-integration/parallelci/)
+- ####[ParallelCI Docs](https://codeship.com/documentation/continuous-integration/parallelci/)
