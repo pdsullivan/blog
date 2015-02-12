@@ -52,7 +52,7 @@ For example, say I am running my unit tests on an AngularJS application that has
 
 
 <div class="row ">
-    <img src="http://blog.pdsullivan.com/assets/assets/codeship-parallel-cli-running.png" class="img-responsive center-block" alt="Codeship">
+    <img src="http://blog.pdsullivan.com/assets/codeship-parallel-cli-running.png" class="img-responsive center-block" alt="Codeship">
 </div>
 <br/>
 
