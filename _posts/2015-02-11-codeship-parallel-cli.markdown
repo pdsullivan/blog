@@ -68,5 +68,3 @@ Thanks for reading!
 - ####[ParallelCLI](https://codeship.com/features/parallelci)
 
 - ####[ParallelCLI Docs](https://codeship.com/documentation/continuous-integration/parallelci/)
-
-<iframe width="854" height="510" src="https://www.youtube.com/embed/E7ujcuGtRjo" frameborder="0" allowfullscreen></iframe>
