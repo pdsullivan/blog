@@ -2,7 +2,7 @@
 layout: post
 comments: true
 title: Speed up Build Times with Codeship's ParallelCI
-date:   2015-02-11
+date:   2015-02-12
 categories: posts
 SocialImage: http://blog.pdsullivan.com/assets/codeship-parallel-cli-tests-setup.png
 ---
