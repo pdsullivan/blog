@@ -18,7 +18,7 @@ SocialImage: http://blog.pdsullivan.com/assets/codeship-parallel-cli-tests-setup
 
 ##ParallelCLI
 
-I was recently given access to a new feature from [Codeship](http://www.codeship.com), called [**ParallelCLI**](https://codeship.com/features/parallelci). ParallelCLI lets you run tests in parallel to reduce the overall time that is spent during a build running tests.
+I was recently given access to a new feature from [Codeship](http://www.codeship.com), called [**ParallelCLI**](https://codeship.com/features/parallelci). ParallelCLI lets you run tests in parallel to reduce the overall time that is spent during a build running tests. Basically, I think its pretty cool :), so here is a little overview about it.
 
 
 <div class="row ">
