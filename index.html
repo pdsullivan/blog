@@ -21,10 +21,10 @@ hideheader: yes
 
 
 <div class="wrapper home">
-<!--<h1 class="body-title">Posts:</h1>-->
-    <!--<hr/>-->
-<ul class="post-list">
-    {% for post in site.posts %}
+
+    <!-- This loops through the paginated posts -->
+    <ul class="post-list">
+        {% for post in paginator.posts %}
         <li class="post-item">
             <h1>
                 <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
@@ -34,9 +34,52 @@ hideheader: yes
                 <!--{{ post.excerpt }}-->
             </h1>
         </li>
-    <hr/>
-    {% endfor %}
-</ul>
+        <hr/>
+        {% endfor %}
+    </ul>
+
+    <nav>
+        <ul class="pager">
+            {% if paginator.previous_page %}
+            <li class="previous"><a href="{{ paginator.previous_page_path }}"><span aria-hidden="true">&larr;</span> Newer</a></li>
+            {% else %}
+            <li class="previous disabled"><a href="#"><span aria-hidden="true">&larr;</span> Newer</a></li>
+            {% endif %}
+
+            <span class="page_number ">Page: {{ paginator.page }} of {{ paginator.total_pages }}</span>
+
+
+            {% if paginator.next_page %}
+            <li class="next"><a href="{{ paginator.next_page_path }}">Older <span aria-hidden="true">&rarr;</span></a></li>
+
+            {% else %}
+            <li class="next disabled"><a href="#">Older <span aria-hidden="true">&rarr;</span></a></li>
+
+            {% endif %}
+
+        </ul>
+    </nav>
+
+    <!--&lt;!&ndash; Pagination links &ndash;&gt;-->
+    <!--<div class="pagination">-->
+
+        <!--{% if paginator.previous_page %}-->
+        <!--<a href="{{ paginator.previous_page_path }}" class="previous">Previous</a>-->
+        <!--{% else %}-->
+        <!--<span class="previous">Previous</span>-->
+        <!--{% endif %}-->
+
+        <!--<span class="page_number ">Page: {{ paginator.page }} of {{ paginator.total_pages }}</span>-->
+
+        <!--{% if paginator.next_page %}-->
+        <!--<a href="{{ paginator.next_page_path }}" class="next">Next</a>-->
+        <!--{% else %}-->
+        <!--<span class="next ">Next</span>-->
+        <!--{% endif %}-->
+    <!--</div>-->
+
+
+
 <a href="{{ "/feed.xml" | prepend: site.baseurl }}"  class="lead btn btn-default ">
     <i class="fa fa-rss"></i> Subscribe via RSS
 </a>

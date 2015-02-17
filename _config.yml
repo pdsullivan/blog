@@ -14,3 +14,4 @@ exclude: ['Gemfile', 'Gemfile.lock', 'README.md']
 # Build settings
 markdown: kramdown
 
+paginate: 5
