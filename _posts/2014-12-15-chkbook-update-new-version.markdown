@@ -4,7 +4,7 @@ comments: true
 title: ChkBook Version 1.1 Released
 date:   2014-12-15
 categories: posts
-SocialImage: http://blog.pdsullivan.com/assets/icon340x340.png
+SocialImage: http://pdsullivan.github.io/ChkBook/ChkBookAppIconLight.png
 ---
 
 

@@ -13,7 +13,9 @@ Just to give it a shout-out right now I am using the [Overcast](https://overcast
 
 <div class="row  ">
     <div class="col-xs-4  col-xs-offset-4 ">
+    <a href="https://overcast.fm/" target="_blank">
     <img src="http://blog.pdsullivan.com/assets/overcastlogo.svg" class="img-responsive center-block" alt="Codeship">
+    </a>
     </div>
 </div>
 <br/>
