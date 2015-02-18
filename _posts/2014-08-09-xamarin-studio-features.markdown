@@ -4,6 +4,7 @@ comments: true
 title:  "My Favorite Xamarin Studio Features"
 date:   2014-08-09
 categories: posts
+SocialImage: http://blog.pdsullivan.com/assets/xamarinstudio.png
 ---
 
 ###Note: This blog post won me 6 months of Xamarin!! Here is [Xamarin's Blog Post][xamarinblog].

@@ -4,6 +4,7 @@ comments: true
 title:  "ATOM Editor"
 date:   2014-09-10
 categories: posts
+SocialImage: http://blog.pdsullivan.com/assets/atomlogo.png
 ---
 
 

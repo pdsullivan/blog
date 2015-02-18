@@ -4,7 +4,7 @@ comments: true
 title:  "A Blog Post about Blogging With Jekyll (meta)"
 date:   2014-10-25
 categories: posts
-SocialImage: http://blog.pdsullivan.com/assets/AngularJS-large.png
+SocialImage: http://blog.pdsullivan.com/assets/jekylllogo.png
 ---
 
 ![]({{ site.baseurl }}/assets/jekylllogo.png)

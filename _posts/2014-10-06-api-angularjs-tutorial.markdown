@@ -4,7 +4,7 @@ comments: true
 title:  "Simple AngularJS tutorial using the Github API"
 date:   2014-10-06
 categories: posts
-SocialImage: http://blog.pdsullivan.com/assets/AngularJS-large.png
+SocialImage: http://blog.pdsullivan.com/assets/angularjslogo.png
 ---
 
 

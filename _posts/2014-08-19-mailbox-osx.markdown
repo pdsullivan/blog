@@ -4,6 +4,7 @@ comments: true
 title:  "Mailbox - OS X Mail Client"
 date:   2014-08-19
 categories: posts
+SocialImage: http://blog.pdsullivan.com/assets/mailboxNew.png
 ---
 
 

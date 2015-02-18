@@ -1,14 +1,38 @@
 ---
 layout: post
 comments: true
-title:  "My Tech Podcast Recomendations"
-date:   2014-10-21
+title:  "My Favorite Tech Podcasts"
+date:   2015-2-17
 categories: posts
+SocialImage: http://blog.pdsullivan.com/assets/overcastlogo.svg
 ---
 
-<div class="alert alert-info">Updated on {{ page.date | date: "%b %-d, %Y" }}.</div>
+<div class="well">I last updated this list on {{ page.date | date: "%b %-d, %Y" }}.</div>
 
-I like listening to podcasts on the way to and from work. Just to give it a shoutout right now I am using the Overcast app for iPhone that came out recently and I am loving it. Here are some of my goto tech podcasts.
+Just to give it a shoutout, right now I am using the [Overcast](https://overcast.fm/) app for iPhone that came a little while back and I am loving it. Give it a try.
+
+<div class="row ">
+    <img src="http://blog.pdsullivan.com/assets/overcastlogo.svg" class="img-responsive center-block" alt="Codeship">
+</div>
+<br/>
+<br/>
+
+I like listening to podcasts on the way to and from work. Here are some of my go-to tech podcasts that I like to listen to.
+
+### [Accidental Tech Podcast (ATP)](http://atp.fm/)
+A really good podcast, mostly apple focused. Got turned on to the show because Marco Arment is one of the hosts and I like to follow him.
+
+> A tech podcast we accidentally created while trying to do a car show. Featuring Marco Arment, Casey Liss, and John Siracusa.
+
+### [The Ihnatko Almanac](http://5by5.tv/ia)
+I am a fan of Andy Ihnatko, I like his take on things and his general rants he goes on in this podcast.
+
+> The Ihnatko Almanac is a weekly discussion that mostly focuses on the Clickable Arts: the movies, music, books, comics, articles, and other bits of entertainment and news that Andy and Dan have been reaching through a mouse click recently. Warning: the Almanac is a designated meme-free zone. We prefer our pianos to be played by expert human artists, not by poorly-Photoshopped cats.
+> Hosted by Andy Ihnatko and Dan Benjamin.
+
+### [Happy Hour By 9to5Mac](http://www.9to5cast.com/)
+
+>Happy Hour is a podcast hosted by Dom Esposito and the staff of 9to5Mac discussing the latest in tech news.
 
 ### [Javascript Jabber][jsjabber]
 I have just recently started listening to this podcast and I am liking it so far. I found it while looking for some [Ionic Framework][ionic] stuff around the web and I have listened to a few so far and I like it.
@@ -40,10 +64,11 @@ As a pretty avid StackOverflow user I enjoy listening to this podcast when it co
 
 ### [TWIT Pocdast Familly][twit]
 I lumped these under one heading but my favorites are as follows (kind of in order...):
-* TWIT (This Week in Tech)
-* Windows Weekly
-* MacBreak Weekly
-* Tech News Today (TNT)
+
+- TWIT (This Week in Tech)
+- Windows Weekly
+- MacBreak Weekly
+- Tech News Today (TNT)
 
 [ionic]:http://ionicframework.com/
 [jsjabber]:http://devchat.tv/js-jabber/

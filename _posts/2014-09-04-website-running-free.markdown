@@ -4,6 +4,7 @@ comments: true
 title:  "How I got my Website Running for Free"
 date:   2014-09-04
 categories: posts
+SocialImage: http://blog.pdsullivan.com/assets/azurelogo.png
 ---
 
 ![]({{ site.baseurl }}/assets/azurelogo.png)

@@ -10,13 +10,13 @@ hideheader: yes
 
 <div class="jumbotron text-center" >
     <h1 class="text-center">
-        <a href="http://pdsullivan.com" target="_blank">
+        <a href="http://pdsullivan.com">
             <img src="https://www.gravatar.com/avatar/6c31ab5c683dcbc45085e6716d5ff176?s=128&amp;d=identicon&amp;r=PG" alt="" width="128" height="128" class="img-circle">
         </a>
         <br/>
         Not a Blog
     </h1>
-    <i class="fa fa-pencil" ></i> & <i class="fa fa-code" ></i> by <a class="page-link" target="_blank" href="http://www.pdsullivan.com">Patrick Sullivan</a>
+    <i class="fa fa-pencil" ></i> & <i class="fa fa-code" ></i> by <a class="page-link"  href="http://www.pdsullivan.com">Patrick Sullivan</a>
 </div>
 
 
@@ -25,16 +25,42 @@ hideheader: yes
     <!-- This loops through the paginated posts -->
     <ul class="post-list">
         {% for post in paginator.posts %}
-        <li class="post-item">
-            <h1>
-                <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
-                <small class="post-meta">
-                    Posted on {{ post.date | date: "%b %-d, %Y" }} by <a href="http://pdsullivan.com" target="_blank">Patrick Sullivan</a>
-                </small>
-                <!--{{ post.excerpt }}-->
-            </h1>
-        </li>
+        <div class="row post-item">
+            <div class="media">
+                {% if post.SocialImage %}
+                <div class="col-xs-2 hidden-xs">
+                    <div class="media-left">
+                        <a href="{{ post.url | prepend: site.baseurl }}">
+                            <img class="media-object" src="{{post.SocialImage}}" alt="{{ post.title }}">
+                        </a>
+                    </div>
+                </div>
+                {% else %}
+                <div class="">
+                </div>
+                {% endif %}
+                <div class="media-body">
+                    <h1 class="media-heading">
+                    <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+                    <small class="post-meta">
+                    Posted on {{ post.date | date: "%b %-d, %Y" }} by <a href="http://pdsullivan.com" >Patrick Sullivan</a>
+                    </small>
+                    </h1>
+                </div>
+            </div>
+        </div>
         <hr/>
+
+        <!--<li class="post-item">-->
+            <!--<h1>-->
+                <!--<a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>-->
+                <!--<small class="post-meta">-->
+                    <!--Posted on {{ post.date | date: "%b %-d, %Y" }} by <a href="http://pdsullivan.com" target="_blank">Patrick Sullivan</a>-->
+                <!--</small>-->
+                <!--&lt;!&ndash;{{ post.excerpt }}&ndash;&gt;-->
+            <!--</h1>-->
+        <!--</li>-->
+        <!--<hr/>-->
         {% endfor %}
     </ul>
 

@@ -4,6 +4,7 @@ comments: true
 title:  "Start a New Project with Bower"
 date:   2014-09-15
 categories: posts
+SocialImage: http://blog.pdsullivan.com/assets/bowerlogo.png
 ---
 
 
