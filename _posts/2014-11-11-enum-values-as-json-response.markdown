@@ -4,7 +4,7 @@ comments: true
 title:  "C# Enum Values as Json ASP.NET Web API Response"
 date:   2014-11-11
 categories: posts
-SocialImage: http://blog.pdsullivan.com/assets/ionic-logo.png
+SocialImage: http://json.org/img/json160.gif
 ---
 
 I did not have the easiest time Googling around for this so I thought I would post it. As simple as it may be may be it might help someone solve there issue more quickly.
