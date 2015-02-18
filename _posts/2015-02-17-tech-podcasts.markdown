@@ -9,10 +9,12 @@ SocialImage: http://blog.pdsullivan.com/assets/overcastlogo.svg
 
 <div class="well">I last updated this list on {{ page.date | date: "%b %-d, %Y" }}.</div>
 
-Just to give it a shoutout, right now I am using the [Overcast](https://overcast.fm/) app for iPhone that came a little while back and I am loving it. Give it a try.
+Just to give it a shout-out right now I am using the [Overcast](https://overcast.fm/) app for iPhone that came a little while back and I am loving it. Give it a try.
 
-<div class="row ">
+<div class="row  ">
+    <div class="col-xs-4  col-xs-offset-4 ">
     <img src="http://blog.pdsullivan.com/assets/overcastlogo.svg" class="img-responsive center-block" alt="Codeship">
+    </div>
 </div>
 <br/>
 <br/>
