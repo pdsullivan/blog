@@ -27,7 +27,7 @@ In this code I use the `$injector` to get my `loggingService` which is a service
 
 <div class="row  ">
     <div class="col-xs-4  col-xs-offset-4 ">
-    <a href="https://overcast.fm/" target="_blank">
+    <a href="http://ngCordova.com" target="_blank">
     <img src="http://blog.pdsullivan.com/assets/ngCordovaLogo.png" class="img-responsive center-block" alt="ng-cordova logo">
     </a>
     </div>
