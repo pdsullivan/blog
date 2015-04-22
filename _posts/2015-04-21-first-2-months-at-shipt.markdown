@@ -7,7 +7,12 @@ categories: posts
 SocialImage: http://blog.pdsullivan.com/assets/shipt-outside.jpg
 ---
 
-<script async src="https://static.medium.com/embed.js"></script><a class="m-story" data-collapsed="true" href="https://medium.com/@pdsullivan/2-months-at-shipt-30033ba62995">2 months at Shipt</a>
+###Originally Posted on Medium
+
+<script async src="https://static.medium.com/embed.js"></script>
+<a class="m-story"  data-width="100%"  data-collapsed="true" href="https://medium.com/@pdsullivan/2-months-at-shipt-30033ba62995">
+First 2 months at Shipt
+</a>
 
 
 I’ve been working at Shipt for almost 2 months. It seems like only a week or two because it’s been a crazy flash of building and shipping software (our service is currently in beta here in Birmingham, Alabama). And damn…has it been fun 😎.
