@@ -1,30 +1,532 @@
----
-layout: null
----
 <?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>{{ site.title | xml_escape }}</title>
-    <description>{{ site.description | xml_escape }}</description>
-    <link>{{ site.url }}{{ site.baseurl }}/</link>
-    <atom:link href="{{ "/feed.xml" | prepend: site.baseurl | prepend: site.url }}" rel="self" type="application/rss+xml" />
-    <pubDate>{{ site.time | date_to_rfc822 }}</pubDate>
-    <lastBuildDate>{{ site.time | date_to_rfc822 }}</lastBuildDate>
-    <generator>Jekyll v{{ jekyll.version }}</generator>
-    {% for post in site.posts limit:10 %}
+    <title>Blog - Patrick Sullivan</title>
+    <description></description>
+    <link>http://blog.pdsullivan.com/</link>
+    <atom:link href="http://blog.pdsullivan.com/feed.xml" rel="self" type="application/rss+xml" />
+    <pubDate>Wed, 24 Feb 2016 21:51:35 +0000</pubDate>
+    <lastBuildDate>Wed, 24 Feb 2016 21:51:35 +0000</lastBuildDate>
+    <generator>Jekyll v2.3.0</generator>
+    
       <item>
-        <title>{{ post.title | xml_escape }}</title>
-        <description>{{ post.content | xml_escape }}</description>
-        <pubDate>{{ post.date | date_to_rfc822 }}</pubDate>
-        <link>{{ post.url | prepend: site.baseurl | prepend: site.url }}</link>
-        <guid isPermaLink="true">{{ post.url | prepend: site.baseurl | prepend: site.url }}</guid>
-        {% for tag in post.tags %}
-        <category>{{ tag | xml_escape }}</category>
-        {% endfor %}
-        {% for cat in post.categories %}
-        <category>{{ cat | xml_escape }}</category>
-        {% endfor %}
+        <title>First 2 Months at Shipt</title>
+        <description>&lt;h3 id=&quot;originally-posted-on-medium&quot;&gt;Originally Posted on Medium&lt;/h3&gt;
+
+&lt;script async=&quot;&quot; src=&quot;https://static.medium.com/embed.js&quot;&gt;&lt;/script&gt;
+
+&lt;p&gt;&lt;a class=&quot;m-story&quot; data-width=&quot;100%&quot; data-collapsed=&quot;true&quot; href=&quot;https://medium.com/@pdsullivan/2-months-at-shipt-30033ba62995&quot;&gt;
+First 2 months at Shipt
+&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;I’ve been working at Shipt for almost 2 months. It seems like only a week or two because it’s been a crazy flash of building and shipping software (our service is currently in beta here in Birmingham, Alabama). And damn…has it been fun 😎.&lt;/p&gt;
+
+&lt;p&gt;We have been focused on building a grocery delivery service, which not surprisingly falls into the, easier said than done, category. It’s such a fun problem to solve, and it is great to work on a small team that is focused on doing something.&lt;/p&gt;
+
+&lt;p&gt;Up until we started our beta rollout a few weeks ago almost everyone was focused on building out the necessary tech or gathering grocery product data. Gathering up all this product data is a pretty important part of this whole…thing, without the products that our customers want in our system, nobody will order anything.&lt;/p&gt;
+
+&lt;p&gt;My title is “Mobile Developer”, which doesn’t limit me to just doing mobile development but that is where my focus is allot of the time. I have been working on building a mobile app for our customers where they will be able to shop and buy groceries from their phones (and tablets etc.). We’re also building a separate app that our grocery shoppers will use to shop and deliver the grocery orders. The apps we are building will run on android and iOS, we are using stuff like AngularJS &amp;amp; Ionic (I plan on writing more about that soon, so much fun tech! 👍 ). I’v been learning a bunch about mobile development and design, and it is great to work at a startup where learning is what it is all about. This is a really amazing chance to learn and to do something I feel passionate about.&lt;/p&gt;
+
+&lt;p&gt;We’re having a shit ton of fun making some great stuff that people seem to really want. We have just started and I’m looking forward to what we can create. We plan on expanding our service to another city soon and that is going to be great! To quote my co-worker Franz Pereira, “ 🚀🚀🚀🚀🚀” (not an exact quote but its close).&lt;/p&gt;
+&lt;hr /&gt;
+
+&lt;p&gt;Also, I would like to thank my friends at my previous job, SuccessEHS/Greenway Health. My old managers and co-workers always encouraged me to keep learning new things and become a better developer. Thanks.&lt;/p&gt;
+</description>
+        <pubDate>Tue, 21 Apr 2015 00:00:00 +0000</pubDate>
+        <link>http://blog.pdsullivan.com/posts/2015/04/21/first-2-months-at-shipt.html</link>
+        <guid isPermaLink="true">http://blog.pdsullivan.com/posts/2015/04/21/first-2-months-at-shipt.html</guid>
+        
+        
+        <category>posts</category>
+        
       </item>
-    {% endfor %}
+    
+      <item>
+        <title>Ionic Framework — Log Errors using Google Analytics and ngCordova</title>
+        <description>&lt;p&gt;I recently added &lt;a href=&quot;http://www.google.com/analytics/&quot;&gt;Google Analytics&lt;/a&gt; tracking to my &lt;a href=&quot;http://ionicframework.com/&quot;&gt;Ionic Framework&lt;/a&gt; app, &lt;a href=&quot;http://pdsullivan.github.io/ChkBook&quot;&gt;ChkBook&lt;/a&gt;. I did this mostly out of curiosity, just wanting to know how much people were using my app. This is because other that seeing the number of downloads, there is no other real look at how or when people are using your app. While putting this in I thought that it might be a good idea to (since I was already gonna be doing the bulk of the work) add in error logging/tracking into the app.&lt;/p&gt;
+
+&lt;h2 id=&quot;error-handler&quot;&gt;Error Handler&lt;/h2&gt;
+
+&lt;p&gt;&lt;br /&gt;
+So, first thing I did was make sure I had an error handler on my AngularJS app. To do this I scrounged some code together from some googleing around. Check out the documentation &lt;a href=&quot;https://docs.angularjs.org/api/ng/service/$exceptionHandler&quot;&gt;here for some more info on the $exceptionHandler&lt;/a&gt; in AngularJS. My exception handling code looks like the following and is in my main &lt;code&gt;app.js&lt;/code&gt;.&lt;/p&gt;
+
+&lt;script src=&quot;https://gist.github.com/pdsullivan/41ee32d006988603655c.js&quot;&gt;&lt;/script&gt;
+
+&lt;p&gt;In this code I use the &lt;code&gt;$injector&lt;/code&gt; to get my &lt;code&gt;loggingService&lt;/code&gt; which is a service I created to handle all the logging calls I needed to make to Google Analytics. The &lt;code&gt;loggingService&lt;/code&gt; is where I use the &lt;a href=&quot;http://ngCordova.com&quot;&gt;ngCordova&lt;/a&gt; plugin called &lt;code&gt;$cordovaGoogleAnalytics&lt;/code&gt; to push the data to Google Analytics (documentation for that plugin can be found &lt;a href=&quot;http://ngcordova.com/docs/plugins/googleAnalytics/&quot;&gt;here&lt;/a&gt;).&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;loggingservice--cordovagoogleanalytics&quot;&gt;loggingService &amp;amp; $cordovaGoogleAnalytics&lt;/h2&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;div class=&quot;row  &quot;&gt;
+    &lt;div class=&quot;col-xs-4  col-xs-offset-4 &quot;&gt;
+    &lt;a href=&quot;http://ngCordova.com&quot; target=&quot;_blank&quot;&gt;
+    &lt;img src=&quot;http://blog.pdsullivan.com/assets/ngCordovaLogo.png&quot; class=&quot;img-responsive center-block&quot; alt=&quot;ng-cordova logo&quot; /&gt;
+    &lt;/a&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;&lt;br /&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;In my &lt;code&gt;loggingService&lt;/code&gt; I have the function &lt;code&gt;logError(errorData, message)&lt;/code&gt; where I just check if the window has cordova defined (which is used to check if I am running it in a browser or if its running on the device). If it’s running in the browser I just log it out to the console (because I am likely just developing) and if its running on a device I make the call to the &lt;code&gt;$cordovaGoogleAnalytics&lt;/code&gt; plugin and pass the data that I want to capture. The way I have it now is fairly simple but it works. (code in this service is still a little bit of a work in progress so its not that great right now)&lt;/p&gt;
+
+&lt;script src=&quot;https://gist.github.com/pdsullivan/0e1a84411e35f9927c4b.js&quot;&gt;&lt;/script&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;Hope someone finds this helpful, or at least amusing. Thanks for taking a look! :)&lt;/p&gt;
+</description>
+        <pubDate>Thu, 19 Feb 2015 00:00:00 +0000</pubDate>
+        <link>http://blog.pdsullivan.com/posts/2015/02/19/ionicframework-googleanalytics-log-errors.html</link>
+        <guid isPermaLink="true">http://blog.pdsullivan.com/posts/2015/02/19/ionicframework-googleanalytics-log-errors.html</guid>
+        
+        
+        <category>posts</category>
+        
+      </item>
+    
+      <item>
+        <title>My Favorite Tech Podcasts</title>
+        <description>&lt;div class=&quot;well&quot;&gt;I last updated this list on Feb 17, 2015.&lt;/div&gt;
+
+&lt;p&gt;Just to give it a shout-out right now I am using the &lt;a href=&quot;https://overcast.fm/&quot;&gt;Overcast&lt;/a&gt; app for iPhone that came a little while back and I am loving it. Give it a try.&lt;/p&gt;
+
+&lt;div class=&quot;row  &quot;&gt;
+    &lt;div class=&quot;col-xs-4  col-xs-offset-4 &quot;&gt;
+    &lt;a href=&quot;https://overcast.fm/&quot; target=&quot;_blank&quot;&gt;
+    &lt;img src=&quot;http://blog.pdsullivan.com/assets/overcastlogo.svg&quot; class=&quot;img-responsive center-block&quot; alt=&quot;Codeship&quot; /&gt;
+    &lt;/a&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;&lt;br /&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;I like listening to podcasts on the way to and from work. Here are some of my go-to tech podcasts that I like to listen to.&lt;/p&gt;
+
+&lt;h3 id=&quot;accidental-tech-podcast-atphttpatpfm&quot;&gt;&lt;a href=&quot;http://atp.fm/&quot;&gt;Accidental Tech Podcast (ATP)&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;A really good podcast, mostly apple focused. Got turned on to the show because Marco Arment is one of the hosts and I like to follow him.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;A tech podcast we accidentally created while trying to do a car show. Featuring Marco Arment, Casey Liss, and John Siracusa.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h3 id=&quot;the-ihnatko-almanachttp5by5tvia&quot;&gt;&lt;a href=&quot;http://5by5.tv/ia&quot;&gt;The Ihnatko Almanac&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;I am a fan of Andy Ihnatko, I like his take on things and his general rants he goes on in this podcast.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;The Ihnatko Almanac is a weekly discussion that mostly focuses on the Clickable Arts: the movies, music, books, comics, articles, and other bits of entertainment and news that Andy and Dan have been reaching through a mouse click recently. Warning: the Almanac is a designated meme-free zone. We prefer our pianos to be played by expert human artists, not by poorly-Photoshopped cats.
+Hosted by Andy Ihnatko and Dan Benjamin.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h3 id=&quot;happy-hour-by-9to5machttpwww9to5castcom&quot;&gt;&lt;a href=&quot;http://www.9to5cast.com/&quot;&gt;Happy Hour By 9to5Mac&lt;/a&gt;&lt;/h3&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Happy Hour is a podcast hosted by Dom Esposito and the staff of 9to5Mac discussing the latest in tech news.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h3 id=&quot;javascript-jabberjsjabber&quot;&gt;&lt;a href=&quot;http://devchat.tv/js-jabber/&quot;&gt;Javascript Jabber&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;I have just recently started listening to this podcast and I am liking it so far. I found it while looking for some &lt;a href=&quot;http://ionicframework.com/&quot;&gt;Ionic Framework&lt;/a&gt; stuff around the web and I have listened to a few so far and I like it.&lt;/p&gt;
+
+&lt;h3 id=&quot;adventures-in-angularaia&quot;&gt;&lt;a href=&quot;http://devchat.tv/adventures-in-angular/&quot;&gt;Adventures in Angular&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;Great Podcast covering some of the news around teh AngularJS world. They have some heavy weight guests on and talk about some great stuff.&lt;/p&gt;
+
+&lt;h3 id=&quot;startup-podcasthearstartup&quot;&gt;&lt;a href=&quot;http://hearstartup.com/&quot;&gt;StartUp Podcast&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;This is a series about Alex Blumberg starting a company that does podcasting. He is recording conversations and documenting his journey along the way. Its really funny and interesting, I am hooked.&lt;/p&gt;
+
+&lt;h3 id=&quot;net-rocksdotnetrocks&quot;&gt;&lt;a href=&quot;http://dotnetrocks.com&quot;&gt;.NET Rocks&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;Dot NET Rocks seems to me to be the grand poobah of tech podcasts specifically in the .net dev circle. Carl and Richard are great at having interesting guests on the show to talk about all sorts of things. The geek out shows which focus on things outside of the .net development world are all worth listening to and are great fun.&lt;/p&gt;
+
+&lt;h3 id=&quot;hanselminuteshans&quot;&gt;&lt;a href=&quot;http://hanselminutes.com&quot;&gt;Hanselminutes&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;I like Scott Hanselman and enjoy hearing his thoughts on different things. His podcast, Hanselminutes, has great list of guests that he interviews about lots of different topics.&lt;/p&gt;
+
+&lt;h3 id=&quot;herding-codeherdingcode&quot;&gt;&lt;a href=&quot;http://herdingcode.com&quot;&gt;Herding Code&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;This podcast does not have has many episodes as some of the others but the ones that do come out are deffinatly worth a listen. K. Scott Allen from odetocode.com is a cohost on this show and he is one of my favorie authors on pluralsight.&lt;/p&gt;
+
+&lt;h3 id=&quot;yet-another-podcastyap&quot;&gt;&lt;a href=&quot;http://jesseliberty.com/podcast/&quot;&gt;Yet Another Podcast&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;By Jesse Liberty. Lots of .net and web dev talk.&lt;/p&gt;
+
+&lt;h3 id=&quot;stackexchange-podcaststackexchange&quot;&gt;&lt;a href=&quot;http://blog.stackoverflow.com/category/podcasts/&quot;&gt;StackExchange Podcast&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;As a pretty avid StackOverflow user I enjoy listening to this podcast when it comes out. The hosts are a goofy group that if for nothing else are worth listening to for the comedic value.&lt;/p&gt;
+
+&lt;h3 id=&quot;twit-pocdast-famillytwit&quot;&gt;&lt;a href=&quot;http://twit.tv&quot;&gt;TWIT Pocdast Familly&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;I lumped these under one heading but my favorites are as follows (kind of in order…):&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;TWIT (This Week in Tech)&lt;/li&gt;
+  &lt;li&gt;Windows Weekly&lt;/li&gt;
+  &lt;li&gt;MacBreak Weekly&lt;/li&gt;
+  &lt;li&gt;Tech News Today (TNT)&lt;/li&gt;
+&lt;/ul&gt;
+
+</description>
+        <pubDate>Tue, 17 Feb 2015 00:00:00 +0000</pubDate>
+        <link>http://blog.pdsullivan.com/posts/2015/02/17/tech-podcasts.html</link>
+        <guid isPermaLink="true">http://blog.pdsullivan.com/posts/2015/02/17/tech-podcasts.html</guid>
+        
+        
+        <category>posts</category>
+        
+      </item>
+    
+      <item>
+        <title>Speed up Build Times with Codeship&#39;s ParallelCI</title>
+        <description>&lt;div class=&quot;row &quot;&gt;
+    &lt;a href=&quot;https://codeship.com/&quot;&gt;&lt;img src=&quot;http://blog.pdsullivan.com/assets/codeship.png&quot; class=&quot;img-responsive center-block&quot; alt=&quot;Codeship&quot; /&gt;&lt;/a&gt;
+&lt;/div&gt;
+&lt;p&gt;&lt;br /&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;parallelci&quot;&gt;ParallelCI&lt;/h2&gt;
+
+&lt;p&gt;I was recently given access to a new feature from &lt;a href=&quot;http://www.codeship.com&quot;&gt;Codeship&lt;/a&gt;, called &lt;a href=&quot;https://codeship.com/features/parallelci&quot;&gt;&lt;strong&gt;ParallelCI&lt;/strong&gt;&lt;/a&gt;. ParallelCI lets you run tests in parallel to reduce the overall time that is spent during a build running tests. Basically, I think its pretty cool :), so here is a little overview about it.&lt;/p&gt;
+
+&lt;div class=&quot;row &quot;&gt;
+    &lt;a href=&quot;https://codeship.com/features/parallelci&quot;&gt;&lt;img src=&quot;https://d1089v03p3mzyq.cloudfront.net/assets/website/pages/parallelci/codeship-parallelci-340f2d5d44a8c17c672bb1a32db36b53.svg&quot; alt=&quot;Codeship&quot; /&gt;&lt;/a&gt;
+&lt;/div&gt;
+&lt;p&gt;&lt;br /&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;ParallelCI&lt;/strong&gt; allows you to split your test commands across multiple build VMs to speed up your build time.&lt;/p&gt;
+
+  &lt;p&gt;– Codeship&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Below is the UI where I set up my different test pipelines. From giving it a try I liked the way that the setup is done. It makes the process intuitive and pretty quick to get up and running with a new pipeline.&lt;/p&gt;
+
+&lt;div class=&quot;row &quot;&gt;
+    &lt;img src=&quot;http://blog.pdsullivan.com/assets/codeship-parallel-cli-tests-setup.png&quot; class=&quot;img-responsive center-block&quot; alt=&quot;Codeship&quot; /&gt;
+&lt;/div&gt;
+&lt;p&gt;&lt;br /&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;test-pipelines&quot;&gt;Test Pipelines&lt;/h2&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Each project has multiple test pipelines. Each of those pipelines is a build VM running independently of each other. Codeship will first run your setup commands and then any arbitrary test commands you defined for this specific pipeline via the interface. To ease distinguishing different pipelines you can provide a name for each one.&lt;/p&gt;
+
+  &lt;p&gt;– Codeship&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;For each project in Codeship I can have multiple pipelines. For every pipeline I have, on the backend there is a VM running the tests in that pipeline. I can name each pipeline to describe it and distinguish it from the other test pipelines.&lt;/p&gt;
+
+&lt;p&gt;For example, say I am running my unit tests on an AngularJS application that has a few different modules with functionality in them. I could cut down the testing and build time by setting up a pipeline for each of those modules. This would also encapsulate my tests so they are running in an more localized environment to cut down on them being impacted by something that could have happened or errored out during another test. Basically I see this as a great way to get more consistent results from the unit tests that I am running.&lt;/p&gt;
+
+&lt;div class=&quot;row &quot;&gt;
+    &lt;img src=&quot;http://blog.pdsullivan.com/assets/codeship-parallel-cli-running.png&quot; class=&quot;img-responsive center-block&quot; alt=&quot;Codeship&quot; /&gt;
+&lt;/div&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;After all of the testing pipelines finish successfully the Deployment Pipeline will be created and run to do the deployment of the application.&lt;/p&gt;
+
+&lt;p&gt;I am working on setting up an example AngularJS project that takes advantage of this new functionality and I will post it out on my github and update this post or write a new one with the specific examples when it is ready.&lt;/p&gt;
+
+&lt;p&gt;Thanks for reading!&lt;/p&gt;
+
+&lt;h3 id=&quot;links&quot;&gt;Links:&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;h4 id=&quot;parallelcihttpscodeshipcomfeaturesparallelci&quot;&gt;&lt;a href=&quot;https://codeship.com/features/parallelci&quot;&gt;ParallelCI&lt;/a&gt;&lt;/h4&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;h4 id=&quot;parallelci-docshttpscodeshipcomdocumentationcontinuous-integrationparallelci&quot;&gt;&lt;a href=&quot;https://codeship.com/documentation/continuous-integration/parallelci/&quot;&gt;ParallelCI Docs&lt;/a&gt;&lt;/h4&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        <pubDate>Thu, 12 Feb 2015 00:00:00 +0000</pubDate>
+        <link>http://blog.pdsullivan.com/posts/2015/02/12/codeship-parallel-ci.html</link>
+        <guid isPermaLink="true">http://blog.pdsullivan.com/posts/2015/02/12/codeship-parallel-ci.html</guid>
+        
+        
+        <category>posts</category>
+        
+      </item>
+    
+      <item>
+        <title>New Favorite New Thing from Ionic</title>
+        <description>&lt;div class=&quot;row &quot;&gt;
+    &lt;img src=&quot;http://blog.pdsullivan.com/assets/ionic-logo.png&quot; class=&quot;img-responsive center-block&quot; alt=&quot;ChkBook&quot; /&gt;
+&lt;/div&gt;
+&lt;p&gt;&lt;br /&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;Ionic blogged a few days ago &lt;a href=&quot;http://ionicframework.com/blog/automating-icons-and-splash-screens/&quot;&gt;“Automating Icons and Splash Screens”&lt;/a&gt; about the newest addition to the &lt;a href=&quot;https://github.com/driftyco/ionic-cli#icon-and-splash-screen-image-generation&quot;&gt;Ionic CLI&lt;/a&gt; (which is installed through &lt;a href=&quot;https://www.npmjs.com/&quot;&gt;NPM&lt;/a&gt; using &lt;code&gt;$ npm install -g ionic&lt;/code&gt;). With this feature they have eliminated in my opinion the absolute WORST part of developing an iOS app. In the past you have either had to use an app to auto generate all of the different splash screen and icon files in the various sizes required (those apps usually didn’t do the best job or had weird behavior and also only did it for ios or android usually). Or you do what I have been doing in the past, which is using an image editing application whether it was Photoshop or something else to design and create the app icons and splash screen images and then export into all of the individual file sizes which could be very tedious if you had to make a little change then export all of the sizes all over again. This was always a pain and really a time sucker, especially if you were developing for ios and android because they have different image size requirements.&lt;/p&gt;
+
+&lt;p&gt;Now with the new feature/service offered by Ionic you can create one splash screen image and one icon image that are then sent off to Ionic’s server, called down to the right size, then returned back to you. This is achieved by taking the splash.png and the icon.png (I am just using png for this example, they offer other image types) and put them in a &lt;code&gt;resources&lt;/code&gt; directory off the root of your project and then run the command &lt;code&gt;ionic resources&lt;/code&gt; (with optional &lt;code&gt;—splash&lt;/code&gt; or &lt;code&gt;—icon&lt;/code&gt; if you only want to do one of the images).&lt;/p&gt;
+
+&lt;div class=&quot;row &quot;&gt;
+    &lt;img src=&quot;http://blog.pdsullivan.com/assets/ionic-resourses-cmd.png&quot; class=&quot;img-responsive center-block&quot; alt=&quot;ChkBook&quot; /&gt;
+&lt;/div&gt;
+&lt;div class=&quot;row &quot;&gt;
+    &lt;img src=&quot;http://blog.pdsullivan.com/assets/ionic-resourse-files.png&quot; class=&quot;img-responsive center-block&quot; alt=&quot;ChkBook&quot; /&gt;
+&lt;/div&gt;
+
+&lt;p&gt;A huge shout-out goes out to the team at Ionic for creating this really awesome new feature, thanks! You can see where I used this new service for my app &lt;a href=&quot;https://github.com/pdsullivan/ChkBook&quot;&gt;ChkBook in the GitHub repo for the project&lt;/a&gt;.&lt;/p&gt;
+</description>
+        <pubDate>Thu, 08 Jan 2015 00:00:00 +0000</pubDate>
+        <link>http://blog.pdsullivan.com/posts/2015/01/08/ionic-new-new-favorite-thing.html</link>
+        <guid isPermaLink="true">http://blog.pdsullivan.com/posts/2015/01/08/ionic-new-new-favorite-thing.html</guid>
+        
+        
+        <category>posts</category>
+        
+      </item>
+    
+      <item>
+        <title>ChkBook Version 1.1 Released</title>
+        <description>&lt;p&gt;Version 1.1 of my app ChkBook was just released to &lt;a href=&quot;https://itunes.apple.com/us/app/chkbook/id927749479?ls=1&amp;amp;mt=8&quot;&gt;the iOS app store&lt;/a&gt; last week. I figured I would do a little write up of the changes I made and maybe so me of the ideas I have going forward.&lt;/p&gt;
+
+&lt;div class=&quot;row &quot;&gt;
+&lt;img src=&quot;http://blog.pdsullivan.com/assets/icon340x340.png&quot; class=&quot;img-responsive center-block&quot; alt=&quot;ChkBook&quot; /&gt;
+&lt;/div&gt;
+
+&lt;h1 id=&quot;so-far&quot;&gt;So Far&lt;/h1&gt;
+&lt;p&gt;ChkBook has done pretty well with regards to downloads, the app has been downloaded 70 times as of Dec. 15 2014 which is good considering the app was released on Nov. 24 2014. I have also thrown together a webpage for the app and you can find that here at, &lt;a href=&quot;http://pdsullivan.github.io/ChkBook&quot;&gt;http://pdsullivan.github.io/ChkBook&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Another little bit of news to share is that ChkBook is now featured in the &lt;a href=&quot;http://showcase.ionicframework.com/app/3a5af329c3e98b0188ad&quot;&gt;Ionic Framework Showcase&lt;/a&gt;. I am very thankful to the Ionic Framework team for accepting ChkBook into their showcase.&lt;/p&gt;
+
+&lt;h1 id=&quot;version-11&quot;&gt;Version 1.1&lt;/h1&gt;
+&lt;p&gt;So for v 1.1 I fixed a few little bugs I had with the input forms for Transactions and Accounts, basically to make sure the dollar amount values that were inputed by the user were valid (like no special characters). Logan Moore, one of my co-workers pointed this out to me when he was inputing values, he was putting commas into the amount and it was breaking all the math that the app was doing.&lt;/p&gt;
+
+&lt;p&gt;Also the main thing you will see in 1.1 is the UI changes I made, including a new app icon (seen above). I have updated the UI to be more flat by taking out some borders and adding some drop shadow to the css. I think it makes it look a little more modern and also moves it towards the Material Design that Google has come out with recently that I really love. I would really like to move the app completely towards the Material Design in the future. Here is a side by side for an example of the changes I made.&lt;/p&gt;
+
+&lt;div class=&quot;row&quot;&gt;
+&lt;div class=&quot;col-md-6&quot;&gt;
+&lt;h2&gt;
+Old
+&lt;/h2&gt;
+&lt;img src=&quot;http://blog.pdsullivan.com/assets/chkBookOld.png&quot; class=&quot;img-responsive center-block&quot; alt=&quot;ChkBook&quot; /&gt;
+&lt;/div&gt;
+&lt;div class=&quot;col-md-6&quot;&gt;
+&lt;h2&gt;
+New
+&lt;/h2&gt;
+
+&lt;img src=&quot;http://blog.pdsullivan.com/assets/chkBookNew.png&quot; class=&quot;img-responsive center-block&quot; alt=&quot;ChkBook&quot; /&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;h1 id=&quot;moving-forward&quot;&gt;Moving Forward&lt;/h1&gt;
+&lt;p&gt;I have allot of cool ideas moving forward, and I have received some really great feedback from users and I will try to work on things based off what people would like to see. One thing that I am working on currently is some application settings that will let you customize some of the functionality of that app in some places that might save some time. Another feature that was suggested by my co-worker Jacob Duncan that I am going to try and put into the settings will be the option to lock the app down with a password, so when you open the app it will ask for a password before you can see data. I will also put in a setting to auto clear transactions when they are created because there are some users where this will save them an extra step when creating transactions on accounts.&lt;/p&gt;
+
+&lt;p&gt;Please leave a comment on this post or leave an app review if you have any ideas of ways you would like to see ChkBook improved. Thanks!&lt;/p&gt;
+
+</description>
+        <pubDate>Mon, 15 Dec 2014 00:00:00 +0000</pubDate>
+        <link>http://blog.pdsullivan.com/posts/2014/12/15/chkbook-update-new-version.html</link>
+        <guid isPermaLink="true">http://blog.pdsullivan.com/posts/2014/12/15/chkbook-update-new-version.html</guid>
+        
+        
+        <category>posts</category>
+        
+      </item>
+    
+      <item>
+        <title>Unit Testing an AngularJS Ionic App with Codeship Continuous Integration, Jasmine, and Karma</title>
+        <description>&lt;p&gt;NOTE: For reference the project that I am working with is on GitHub &lt;a href=&quot;https://github.com/pdsullivan/ChkBook&quot;&gt;here&lt;/a&gt; if you would like to see the source code in its full form.&lt;/p&gt;
+
+&lt;p&gt;I am working on an app, &lt;a href=&quot;http://pdsullivan.github.io/ChkBook/&quot;&gt;ChkBook&lt;/a&gt;, I have blogged &lt;a href=&quot;http://blog.pdsullivan.com/posts/2014/11/07/new-app-ionic-framework.html&quot;&gt;about the app in the past&lt;/a&gt;. I am building it with Ionic Framework and the early versions of the app are currently in the &lt;a href=&quot;https://itunes.apple.com/us/app/chkbook/id927749479?ls=1&amp;amp;mt=8&quot;&gt;iOS app store&lt;/a&gt;. And I am sorry to say that because I got excited and in a hurry to ship the first version I missed writing unit tests 😬 . So I am now repenting, I am writing tests for my app. Here I will talk about how I set up the tests and run them on &lt;a href=&quot;http://codeship.com&quot;&gt;Codeship, a Continuous Integration and Delivery Service&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://blog.pdsullivan.com/assets/unitTests.png&quot; alt=&quot;Unit Test&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;I saw this picture &lt;a href=&quot;http://blog.codeship.com/node-js-security-tips/&quot;&gt;on Codeship’s blog&lt;/a&gt; and liked it.&lt;/p&gt;
+
+&lt;h1 id=&quot;jasmine&quot;&gt;Jasmine&lt;/h1&gt;
+
+&lt;p&gt;So first I added &lt;a href=&quot;http://jasmine.github.io&quot;&gt;Jasmine&lt;/a&gt; into my project structure. I added a &lt;code&gt;jasmine&lt;/code&gt; directory in the root of my project and in there I unzipped &lt;a href=&quot;https://github.com/jasmine/jasmine/blob/master/dist/jasmine-standalone-2.0.0.zip&quot;&gt;jasmine-standalone-2.0.0.zip&lt;/a&gt;. With that you get a &lt;code&gt;SpecRunner.html&lt;/code&gt; which is the GUI to run the tests you set up and some example javascript files to help get started. In the spec directory I will add my own &lt;code&gt;accountControllerSpec.js&lt;/code&gt; which will have the tests for my &lt;code&gt;accountController&lt;/code&gt; from my angular app which is over in the &lt;code&gt;www&lt;/code&gt; directory.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://blog.pdsullivan.com/assets/ionicjasminefilestructure.png&quot; alt=&quot;File Structure of Jasmine Directory&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;In my &lt;code&gt;accountControllerSpec.js&lt;/code&gt; I will write a few simple tests using Jasmine to get going. First one is to check if the scope is defined and the the next two are to check if a few variables got populated when the controller was created. I also have the &lt;code&gt;beforeEach&lt;/code&gt; calls to create the controller that I need to test using &lt;code&gt;angular-mocks&lt;/code&gt;.&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;nx&quot;&gt;describe&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;accountsController&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+
+    &lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;scope&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;controller&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;beforeEach&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;module&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;app&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;));&lt;/span&gt;
+
+    &lt;span class=&quot;nx&quot;&gt;beforeEach&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;inject&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;
+        &lt;span class=&quot;nx&quot;&gt;$rootScope&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+        &lt;span class=&quot;nx&quot;&gt;$controller&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+        &lt;span class=&quot;nx&quot;&gt;$ionicModal&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+        &lt;span class=&quot;nx&quot;&gt;$ionicPopup&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+        &lt;span class=&quot;nx&quot;&gt;$stateParams&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+        &lt;span class=&quot;nx&quot;&gt;$timeout&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+        &lt;span class=&quot;nx&quot;&gt;$state&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+
+        &lt;span class=&quot;nx&quot;&gt;scope&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;$rootScope&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;$new&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+
+            &lt;span class=&quot;nx&quot;&gt;controller&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;$controller&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;accountsController&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+                &lt;span class=&quot;nx&quot;&gt;$scope&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;scope&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+                &lt;span class=&quot;nx&quot;&gt;$ionicModal&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;$ionicModal&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+                &lt;span class=&quot;nx&quot;&gt;$ionicPopup&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;$ionicPopup&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+                &lt;span class=&quot;nx&quot;&gt;$state&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;$state&lt;/span&gt;
+
+        &lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}));&lt;/span&gt;
+
+    &lt;span class=&quot;nx&quot;&gt;it&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;should have a scope variable defined&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;nx&quot;&gt;expect&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;scope&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;toBeDefined&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
+
+    &lt;span class=&quot;nx&quot;&gt;it&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;should have a accounts array&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(){&lt;/span&gt;
+        &lt;span class=&quot;nx&quot;&gt;expect&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;scope&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;accounts&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;length&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;toBe&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
+
+    &lt;span class=&quot;nx&quot;&gt;it&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;should have types setup&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(){&lt;/span&gt;
+        &lt;span class=&quot;nx&quot;&gt;expect&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;scope&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;accountTypes&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;length&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;toBe&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+
+    &lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
+
+&lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h1 id=&quot;karma&quot;&gt;Karma&lt;/h1&gt;
+
+&lt;p&gt;Now for the &lt;a href=&quot;http://karma-runner.github.io/0.12/index.html&quot;&gt;Karma&lt;/a&gt; setup. I am using WebStorm so there is functionality built in to run karma tests in the IDE as you develop, but since I am going to be running my tests automatically using Codeship I will want them to run from the command line. To get Karma set up to run from the command line for my project I will run some commands in the terminal to install some packages (these will also be used later to set up the environment in Codeship).&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;npm install -g karma
+npm install -g karma-cli
+npm install karma-jasmine
+npm install karma-chrome-launcher&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;So I navigated in the terminal to my root project directory and ran &lt;code&gt;karma init&lt;/code&gt; and answer the prompts to create the &lt;code&gt;karma.conf.js&lt;/code&gt; config file for karma (I just accepted the defaults for the answers). Inside of the config file in the “files” section I add all the files that will need to be referenced to run the test (same files from the specrunner.html file if you have used that to run tests already):&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;nx&quot;&gt;files&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;
+      &lt;span class=&quot;s2&quot;&gt;&amp;quot;www/lib/ionic/js/ionic.bundle.js&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+      &lt;span class=&quot;s2&quot;&gt;&amp;quot;www/lib/angular-mocks/angular-mocks.js&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+      &lt;span class=&quot;s2&quot;&gt;&amp;quot;www/lib/ngCordova/dist/ng-cordova.js&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+      &lt;span class=&quot;s2&quot;&gt;&amp;quot;www/app/app.js&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+      &lt;span class=&quot;s2&quot;&gt;&amp;quot;www/app/accounts/accountsController.js&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+      &lt;span class=&quot;s2&quot;&gt;&amp;quot;www/app/dataServices/accountDataService.js&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+      &lt;span class=&quot;s2&quot;&gt;&amp;quot;www/app/logging/logingService.js&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+      &lt;span class=&quot;s2&quot;&gt;&amp;quot;jasmine/spec/accountControllerSpec.js&amp;quot;&lt;/span&gt;
+
+    &lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;And then to run the test in the command line, I am using this command below (when in the root of the project directory):&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;karma start karma.conf.js --browsers Chrome --single-run&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h1 id=&quot;codeship-build-setup&quot;&gt;Codeship Build Setup&lt;/h1&gt;
+
+&lt;p&gt;And now we will go to the internet to get this all running on &lt;a href=&quot;http://codeship.com&quot;&gt;Codeship&lt;/a&gt;. In CodeShip I have added &lt;a href=&quot;https://github.com/pdsullivan/ChkBook&quot;&gt;my repo&lt;/a&gt; to a project and now its time to write the test commands.&lt;/p&gt;
+
+&lt;p&gt;When setting up the project properties in Codeship you get to set up some commands that will run first, the “Setup Commands”, which will basically be where I will set up my environment in which to execute the test commands. In this section I have the following:&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;npm install karma
+npm install karma-cli
+npm install karma-jasmine
+npm install karma-chrome-launcher&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;I use &lt;code&gt;npm&lt;/code&gt; to install &lt;code&gt;karma&lt;/code&gt; and the &lt;code&gt;karma-cli&lt;/code&gt; for running the karma commands. Then I also install &lt;code&gt;karma-jasmine&lt;/code&gt; to run the jasmine tests that I have written in the spec and then &lt;code&gt;karma-chrome-launcher&lt;/code&gt; which will give me the ability to run the tests in a browser even from the command line in the Codeship environment.&lt;/p&gt;
+
+&lt;p&gt;After the setup commands it is time to set up the actual test commands. The command I will run will neet to start karma (the &lt;code&gt;karma.conf.js&lt;/code&gt; file) and tell it to use chrome to run the tests once. Here is my command that will execute the tests:&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;$CI_BRANCH&amp;quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;master&amp;quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;then&lt;/span&gt; karma start karma.conf.js --browsers Chrome --single-run&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;fi&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;I use the if statement in the command to only run the tests on my master branch which for now is fine because I am doing my development on the ionic app in the master branch. This also prevents me from running tests when I check in changes to my gh-pages branch which is the Github Pages branch for the &lt;a href=&quot;http://pdsullivan.github.io/ChkBook&quot;&gt;project’s web page&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;The result looks like this when Codeship runs the tests (and they all pass which does not always happen 😉…).&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://blog.pdsullivan.com/assets/chkbookcodeship.png&quot; alt=&quot;Codeship UI&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Thanks for reading and please comment or contact me if there are any questions or if anything is not working as I described.&lt;/p&gt;
+</description>
+        <pubDate>Fri, 05 Dec 2014 00:00:00 +0000</pubDate>
+        <link>http://blog.pdsullivan.com/posts/2014/12/05/ionic-codeship-unit-testing-ci.html</link>
+        <guid isPermaLink="true">http://blog.pdsullivan.com/posts/2014/12/05/ionic-codeship-unit-testing-ci.html</guid>
+        
+        
+        <category>posts</category>
+        
+      </item>
+    
+      <item>
+        <title>C# Enum Values as Json ASP.NET Web API Response</title>
+        <description>&lt;p&gt;I did not have the easiest time Googling around for this so I thought I would post it. As simple as it may be may be it might help someone solve there issue more quickly.&lt;/p&gt;
+
+&lt;p&gt;I am working on a web app that is using AngularJS on the client side and in one of the forms I needed the user to be able to select time zones but I didn’t want to hard code it into the javascript, as well as it is getting stored on the back-end as my C# enum type &lt;code&gt;USTimeZones&lt;/code&gt;:&lt;/p&gt;
+
+&lt;script src=&quot;https://gist.github.com/pdsullivan/fdea11f369ac4ecc48a6.js&quot;&gt;&lt;/script&gt;
+
+&lt;p&gt;So I created this api method to return me the values in an array of objects with and id (which is the value of the item in the enum) and a name (which is the display name of the item in the enum). Here is my method from a Web API controller:&lt;/p&gt;
+
+&lt;script src=&quot;https://gist.github.com/pdsullivan/07b8fbee1e7667a7ae2e.js&quot;&gt;&lt;/script&gt;
+
+&lt;p&gt;I use &lt;code&gt;Enum.GetValues(typeof(USTimeZones))&lt;/code&gt; to get an array of the values in the enum and then I add an object to my array that is the item from the array casted into an int and then the item casted into a string to get the name.&lt;/p&gt;
+
+&lt;p&gt;The returning values look like this, and I am able to just call from javascript via ajax to the values:&lt;/p&gt;
+
+&lt;script src=&quot;https://gist.github.com/pdsullivan/546d46d30567ccaa7f6e.js&quot;&gt;&lt;/script&gt;
+
+</description>
+        <pubDate>Tue, 11 Nov 2014 00:00:00 +0000</pubDate>
+        <link>http://blog.pdsullivan.com/posts/2014/11/11/enum-values-as-json-response.html</link>
+        <guid isPermaLink="true">http://blog.pdsullivan.com/posts/2014/11/11/enum-values-as-json-response.html</guid>
+        
+        
+        <category>posts</category>
+        
+      </item>
+    
+      <item>
+        <title>I&#39;m Building a New App Using Ionic Framework</title>
+        <description>&lt;p&gt;&lt;img src=&quot;/assets/ionic-logo.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;I have been working the past few weeks (off and on) on a new app using &lt;a href=&quot;http://ionicframework.com/&quot;&gt;Ionic Framework&lt;/a&gt; which is a mobile development framework built using AngularJS on top of Cordova to access native API’s for the different platforms. Its pretty great, they explain it better than me:&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Ionic is a powerful HTML5 native app development framework that helps you build native-feeling mobile apps all with web technologies like HTML, CSS, and Javascript.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;To start out with the plan for the app is to replace an old app I have been using on my phone for while to keep track of money and bank accounts. The other app is designed in the old iOS 5/6 (ish) style and its not optimized for the newer sizes (by that I mean 5 and 5s not to mention 6 and 6 plus). I am tentatively going with the name “ChkBook” for the app because I basically use it for check book type stuff. So yeah, that took allot of imagination.&lt;/p&gt;
+
+&lt;p&gt;The decision to use Ionic started out just to try out a new framework, but wow am I pleased with my decision and with Ionic Framework. In the past I have used Xamarin to develop an app for iOS (&lt;a href=&quot;http://calcunotes.com&quot;&gt;CalcuNotes&lt;/a&gt;). I really enjoyed the process and very much support what Xamarin is doing (as of now I have a license for a few more months that they gave me for a blog post I wrote). I found Ionic Framework after doing some development here and there with AngularJS and I was on PluralSight looking at some videos and I found one on “&lt;a href=&quot;http://www.pluralsight.com/courses/building-mobile-apps-ionic-framework-angularjs&quot;&gt;Building Mobile Apps With the Ionic Framework and AngularJS&lt;/a&gt;” and just started watching it and kinda fell in love. Its a really good course and I recommend it.&lt;/p&gt;
+
+&lt;p&gt;So I have almost gotten to a minimum viable product with the app and in the next few days after I get some of the bugs sorted out I plan on starting the process of submitting it to the iOS app store. I plan to submit it to the google play store as well in the future but I am focusing on iOS for now, don’t know why but its probably just cause I use an iPhone. You can find all the code that I am writing for the app in its &lt;a href=&quot;https://github.com/pdsullivan/ChkBook&quot;&gt;GitHub repo&lt;/a&gt; (&lt;a href=&quot;https://github.com/pdsullivan/ChkBook&quot;&gt;https://github.com/pdsullivan/ChkBook&lt;/a&gt;). I guess I should also mention that I will keep the app open source, I figured why not :).&lt;/p&gt;
+
+&lt;p&gt;I will most defiantly be writing more about the process of developing this app and using Ionic Framework because there is so much interesting stuff going on in the AngularJS community along with Ionic. I have lots of really cool ideas for functionality to maybe add in the future with this app so I am looking forward to that, should be fun! Thanks for reading.&lt;/p&gt;
+
+</description>
+        <pubDate>Fri, 07 Nov 2014 00:00:00 +0000</pubDate>
+        <link>http://blog.pdsullivan.com/posts/2014/11/07/new-app-ionic-framework.html</link>
+        <guid isPermaLink="true">http://blog.pdsullivan.com/posts/2014/11/07/new-app-ionic-framework.html</guid>
+        
+        
+        <category>posts</category>
+        
+      </item>
+    
+      <item>
+        <title>A Blog Post about Blogging With Jekyll (meta)</title>
+        <description>&lt;p&gt;&lt;img src=&quot;/assets/jekylllogo.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;I started out writing this blog to enter a contest with &lt;a href=&quot;http://xamarin.com/&quot;&gt;Xamarin&lt;/a&gt;, which I surprisingly won (ha). A few blog posts later I have realized that its not that hard to write a little post every once in a while about what I am working on or interested in at the moment. That being said I realized fairly quickly that I did not want to keep coding my own html page every time I decided to write another blog post. So I started looking around at blogging tools and the different ways people do it. I really didn’t want to pay for something like SquareSpace (as awesome as they are) or Wordpress with my custom domain and I was already hosting my site in GitHub Pages so I was interested in looking into Jekyll.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://jekyllrb.com/&quot;&gt;Jekyll&lt;/a&gt; is a blog aware (which sounds interesting) static site generator. It is open source and is written in Ruby by &lt;a href=&quot;http://tom.preston-werner.com/&quot;&gt;Tom Preston-Werner&lt;/a&gt;, who was a co-founder at GitHub. So I decided to jump in and do this thing. One thing that really attracts me to Jekyll is you can write posts in &lt;a href=&quot;http://en.wikipedia.org/wiki/Markdown&quot;&gt;Markdown&lt;/a&gt; (a plan text formatting syntax) which makes it much easier to quickly throw together a post using any old method as long as you have text editor.&lt;/p&gt;
+
+&lt;p&gt;Fist step was to try out a little test site on my local machine. I just followed the &lt;a href=&quot;https://help.github.com/articles/using-jekyll-with-pages/&quot;&gt;Jekyll setup steps on GitHub Pages&lt;/a&gt;. After a few googles around for help installing a different version of Ruby than I had installed originally I was up and running with a test site. I think I was having issues with my gem because at the time I was running the OS X Yosemite Beta. Then I copied out all of my old blog posts from my repository where my blog has been living (all html pages) and then deleted everything in that repo to start clean. Next I ran the command to put the starter template Jekyll site into that repository, which give you a main page that lists the posts that you have made and then it give you an about page along with one starter example of a post.&lt;/p&gt;
+
+&lt;p&gt;I copied all the plain text from my old blog posts into Markdown files (.markdown) and put them into the &lt;code&gt;_posts&lt;/code&gt; directory of the new Jekyll site. Also for the &lt;code&gt;.mardown&lt;/code&gt; files int that directory you name them &lt;date&gt;-&lt;postname&gt;.markdown (ex. 2014-9-10-atom-editor.markdown) and when jekyll builds the site it will put them in directories according to the date that you tell it which is pretty nice and fits with the norm for blog pages. I ended up adding an `assets` folder where I keep my images and things for the posts which you can reference in the markdown files by putting in a image html tag or the markdown picture syntax.&lt;/postname&gt;&lt;/date&gt;&lt;/p&gt;
+
+&lt;p&gt;When Jekyll builds the site it will take all of the components you have in the top level directory that are not prefixed by an underscore and put them into the &lt;code&gt;_site&lt;/code&gt; directory which is where the static site will be built into. Then it takes those special directories with the underscores like &lt;code&gt;_layouts&lt;/code&gt;, &lt;code&gt;_posts&lt;/code&gt;, &lt;code&gt;_includes&lt;/code&gt;, and any others then builds the contained files into the site. The way I think about the build process that produces the static site is similar to the way a backend like asp.net MVC processes the pages and runs code to produce HTML from the syntax in the pages. For Jekyll an example of some syntax is like this snippet (below), which is the main page layout.&lt;/p&gt;
+
+&lt;script src=&quot;https://gist.github.com/pdsullivan/24c4c47408498870be46.js&quot;&gt;&lt;/script&gt;
+
+&lt;p&gt;Once I had all that stuff working well and customized the style a little I committed the jekyll site to GitHub in my gh-pages directory and GitHub Pages handled the Jekyll build for the site producing the static pages that make up the site. I now had a new blog with a nice way of adding new pages. You can find the repository where I host this blog &lt;a href=&quot;https://github.com/pdsullivan/blog&quot;&gt;here on my GitHub&lt;/a&gt; if you are wanting to see how I set up everything.&lt;/p&gt;
+
+&lt;p&gt;After a few months of using Jekyll for my blog I have really enjoyed it. I have recently gone in and changed up some of the style a little to make it a little more custom looking, and I have also used Disqus to add some commenting functionality to the site.&lt;/p&gt;
+
+</description>
+        <pubDate>Sat, 25 Oct 2014 00:00:00 +0000</pubDate>
+        <link>http://blog.pdsullivan.com/posts/2014/10/25/blogging-with-jekyll.html</link>
+        <guid isPermaLink="true">http://blog.pdsullivan.com/posts/2014/10/25/blogging-with-jekyll.html</guid>
+        
+        
+        <category>posts</category>
+        
+      </item>
+    
   </channel>
 </rss>

@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html ng-app="analyticsApp" >
+
+  <head>
+    <link rel="shortcut icon" href="/favicon.ico  " type="image/x-icon" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>Unit Testing an AngularJS Ionic App with Codeship Continuous Integration, Jasmine, and Karma</title>
+
+    <meta name="description" content="">
+    <meta property=”og:image” content=http://blog.pdsullivan.com/assets/unitTests.png />
+    <meta property="og:title" content="Unit Testing an AngularJS Ionic App with Codeship Continuous Integration, Jasmine, and Karma" />
+    <meta property="og:description" content="Unit Testing an AngularJS Ionic App with Codeship Continuous Integration, Jasmine, and Karma"/>
+    <meta name="msvalidate.01" content="D7D996BDC460370DA8472E77EF07D9AE" />
+
+
+    <link rel="stylesheet" href="/css/main.css">
+
+    <!--<link rel="stylesheet" href="/lib/bootstrap-material-design/dist/css/material.min.css">-->
+    <link rel="stylesheet" href="/lib/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/lib/fontawesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/lib/octicons/octicons/octicons.css">
+
+
+    <link rel="stylesheet" href="/css/site.css">
+
+
+    <link rel="canonical" href="http://blog.pdsullivan.com/posts/2014/12/05/ionic-codeship-unit-testing-ci.html">
+
+    <link href='http://fonts.googleapis.com/css?family=Roboto:100,300' rel='stylesheet' type='text/css'>
+
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-47824136-2', 'auto');
+      ga('send', 'pageview');
+
+    </script>
+
+
+</head>
+
+
+  <body>
+
+    
+<nav id="navTopArea" class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="">
+        <div class="">
+
+            <a class="navbar-brand" href="/"><strong>Not a Blog</strong></a>
+
+
+        </div>
+
+        <!--<p class="navbar-text navbar-right">by <a class="page-link" target="_blank" href="http://www.pdsullivan.com">Patrick Sullivan</a></p>-->
+    </div>
+</nav>
+
+
+    <div class="page-content">
+      <div class="">
+        <div class="jumbotron">
+    <h1 class="post-title">Unit Testing an AngularJS Ionic App with Codeship Continuous Integration, Jasmine, and Karma</h1>
+    <small class="post-meta white">
+        By <a href="http://pdsullivan.com"> Patrick Sullivan</a> on Dec 5, 2014
+    </small>
+
+
+</div>
+
+
+<div class="wrapper post">
+
+    
+
+<div style="margin: 5px;">
+<div class="row">
+    <p class=" text-right">Share:
+        <a  target="_blank" class="btn btn-twitter" href="http://www.twitter.com/share?url=http://blog.pdsullivan.com/posts/2014/12/05/ionic-codeship-unit-testing-ci.html&via=patsully88&text=Unit Testing an AngularJS Ionic App with Codeship Continuous Integration, Jasmine, and Karma"><i class="fa fa-twitter"></i></a>
+        <a target="_blank" class="btn btn-googleplus" href="https://plus.google.com/share?url=http://blog.pdsullivan.com/posts/2014/12/05/ionic-codeship-unit-testing-ci.html"><i class="fa fa-google-plus"></i></a>
+        <!--<a class="btn btn-linkedin" href="http://www.linkedin.com/shareArticle?mini=true&url=http://blog.pdsullivan.com/posts/2014/12/05/ionic-codeship-unit-testing-ci.html&title='Unit Testing an AngularJS Ionic App with Codeship Continuous Integration, Jasmine, and Karma'"><i class="fa fa-linkedin"></i></a>-->
+        <a target="_blank" class="btn btn-facebook" href="https://www.facebook.com/sharer/sharer.php?u=http://blog.pdsullivan.com/posts/2014/12/05/ionic-codeship-unit-testing-ci.html"><i class="fa fa-facebook"></i></a>
+    </p>
+</div>
+</div>
+
+  <article class="post-content">
+    <p>NOTE: For reference the project that I am working with is on GitHub <a href="https://github.com/pdsullivan/ChkBook">here</a> if you would like to see the source code in its full form.</p>
+
+<p>I am working on an app, <a href="http://pdsullivan.github.io/ChkBook/">ChkBook</a>, I have blogged <a href="http://blog.pdsullivan.com/posts/2014/11/07/new-app-ionic-framework.html">about the app in the past</a>. I am building it with Ionic Framework and the early versions of the app are currently in the <a href="https://itunes.apple.com/us/app/chkbook/id927749479?ls=1&amp;mt=8">iOS app store</a>. And I am sorry to say that because I got excited and in a hurry to ship the first version I missed writing unit tests 😬 . So I am now repenting, I am writing tests for my app. Here I will talk about how I set up the tests and run them on <a href="http://codeship.com">Codeship, a Continuous Integration and Delivery Service</a>.</p>
+
+<p><img src="http://blog.pdsullivan.com/assets/unitTests.png" alt="Unit Test" /></p>
+
+<p>I saw this picture <a href="http://blog.codeship.com/node-js-security-tips/">on Codeship’s blog</a> and liked it.</p>
+
+<h1 id="jasmine">Jasmine</h1>
+
+<p>So first I added <a href="http://jasmine.github.io">Jasmine</a> into my project structure. I added a <code>jasmine</code> directory in the root of my project and in there I unzipped <a href="https://github.com/jasmine/jasmine/blob/master/dist/jasmine-standalone-2.0.0.zip">jasmine-standalone-2.0.0.zip</a>. With that you get a <code>SpecRunner.html</code> which is the GUI to run the tests you set up and some example javascript files to help get started. In the spec directory I will add my own <code>accountControllerSpec.js</code> which will have the tests for my <code>accountController</code> from my angular app which is over in the <code>www</code> directory.</p>
+
+<p><img src="http://blog.pdsullivan.com/assets/ionicjasminefilestructure.png" alt="File Structure of Jasmine Directory" /></p>
+
+<p>In my <code>accountControllerSpec.js</code> I will write a few simple tests using Jasmine to get going. First one is to check if the scope is defined and the the next two are to check if a few variables got populated when the controller was created. I also have the <code>beforeEach</code> calls to create the controller that I need to test using <code>angular-mocks</code>.</p>
+
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">describe</span><span class="p">(</span><span class="s2">&quot;accountsController&quot;</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+
+    <span class="kd">var</span> <span class="nx">scope</span><span class="p">,</span> <span class="nx">controller</span><span class="p">;</span>
+    <span class="nx">beforeEach</span><span class="p">(</span><span class="nx">module</span><span class="p">(</span><span class="s1">&#39;app&#39;</span><span class="p">));</span>
+
+    <span class="nx">beforeEach</span><span class="p">(</span><span class="nx">inject</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span>
+        <span class="nx">$rootScope</span><span class="p">,</span>
+        <span class="nx">$controller</span><span class="p">,</span>
+        <span class="nx">$ionicModal</span><span class="p">,</span>
+        <span class="nx">$ionicPopup</span><span class="p">,</span>
+        <span class="nx">$stateParams</span><span class="p">,</span>
+        <span class="nx">$timeout</span><span class="p">,</span>
+        <span class="nx">$state</span><span class="p">)</span> <span class="p">{</span>
+
+        <span class="nx">scope</span> <span class="o">=</span> <span class="nx">$rootScope</span><span class="p">.</span><span class="nx">$new</span><span class="p">();</span>
+
+            <span class="nx">controller</span> <span class="o">=</span> <span class="nx">$controller</span><span class="p">(</span><span class="s1">&#39;accountsController&#39;</span><span class="p">,</span> <span class="p">{</span>
+                <span class="nx">$scope</span><span class="o">:</span> <span class="nx">scope</span><span class="p">,</span>
+                <span class="nx">$ionicModal</span><span class="o">:</span> <span class="nx">$ionicModal</span><span class="p">,</span>
+                <span class="nx">$ionicPopup</span><span class="o">:</span> <span class="nx">$ionicPopup</span><span class="p">,</span>
+                <span class="nx">$state</span><span class="o">:</span> <span class="nx">$state</span>
+
+        <span class="p">});</span>
+    <span class="p">}));</span>
+
+    <span class="nx">it</span><span class="p">(</span><span class="s2">&quot;should have a scope variable defined&quot;</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+        <span class="nx">expect</span><span class="p">(</span><span class="nx">scope</span><span class="p">).</span><span class="nx">toBeDefined</span><span class="p">();</span>
+    <span class="p">});</span>
+
+    <span class="nx">it</span><span class="p">(</span><span class="s2">&quot;should have a accounts array&quot;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(){</span>
+        <span class="nx">expect</span><span class="p">(</span><span class="nx">scope</span><span class="p">.</span><span class="nx">accounts</span><span class="p">.</span><span class="nx">length</span><span class="p">).</span><span class="nx">toBe</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+    <span class="p">});</span>
+
+    <span class="nx">it</span><span class="p">(</span><span class="s2">&quot;should have types setup&quot;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(){</span>
+        <span class="nx">expect</span><span class="p">(</span><span class="nx">scope</span><span class="p">.</span><span class="nx">accountTypes</span><span class="p">.</span><span class="nx">length</span><span class="p">).</span><span class="nx">toBe</span><span class="p">(</span><span class="mi">3</span><span class="p">);</span>
+
+    <span class="p">});</span>
+
+<span class="p">});</span></code></pre></div>
+
+<h1 id="karma">Karma</h1>
+
+<p>Now for the <a href="http://karma-runner.github.io/0.12/index.html">Karma</a> setup. I am using WebStorm so there is functionality built in to run karma tests in the IDE as you develop, but since I am going to be running my tests automatically using Codeship I will want them to run from the command line. To get Karma set up to run from the command line for my project I will run some commands in the terminal to install some packages (these will also be used later to set up the environment in Codeship).</p>
+
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">npm install -g karma
+npm install -g karma-cli
+npm install karma-jasmine
+npm install karma-chrome-launcher</code></pre></div>
+
+<p>So I navigated in the terminal to my root project directory and ran <code>karma init</code> and answer the prompts to create the <code>karma.conf.js</code> config file for karma (I just accepted the defaults for the answers). Inside of the config file in the “files” section I add all the files that will need to be referenced to run the test (same files from the specrunner.html file if you have used that to run tests already):</p>
+
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">files</span><span class="o">:</span> <span class="p">[</span>
+      <span class="s2">&quot;www/lib/ionic/js/ionic.bundle.js&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;www/lib/angular-mocks/angular-mocks.js&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;www/lib/ngCordova/dist/ng-cordova.js&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;www/app/app.js&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;www/app/accounts/accountsController.js&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;www/app/dataServices/accountDataService.js&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;www/app/logging/logingService.js&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;jasmine/spec/accountControllerSpec.js&quot;</span>
+
+    <span class="p">]</span></code></pre></div>
+
+<p>And then to run the test in the command line, I am using this command below (when in the root of the project directory):</p>
+
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">karma start karma.conf.js --browsers Chrome --single-run</code></pre></div>
+
+<h1 id="codeship-build-setup">Codeship Build Setup</h1>
+
+<p>And now we will go to the internet to get this all running on <a href="http://codeship.com">Codeship</a>. In CodeShip I have added <a href="https://github.com/pdsullivan/ChkBook">my repo</a> to a project and now its time to write the test commands.</p>
+
+<p>When setting up the project properties in Codeship you get to set up some commands that will run first, the “Setup Commands”, which will basically be where I will set up my environment in which to execute the test commands. In this section I have the following:</p>
+
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">npm install karma
+npm install karma-cli
+npm install karma-jasmine
+npm install karma-chrome-launcher</code></pre></div>
+
+<p>I use <code>npm</code> to install <code>karma</code> and the <code>karma-cli</code> for running the karma commands. Then I also install <code>karma-jasmine</code> to run the jasmine tests that I have written in the spec and then <code>karma-chrome-launcher</code> which will give me the ability to run the tests in a browser even from the command line in the Codeship environment.</p>
+
+<p>After the setup commands it is time to set up the actual test commands. The command I will run will neet to start karma (the <code>karma.conf.js</code> file) and tell it to use chrome to run the tests once. Here is my command that will execute the tests:</p>
+
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="k">if</span> <span class="o">[</span> <span class="s2">&quot;$CI_BRANCH&quot;</span> <span class="o">==</span> <span class="s2">&quot;master&quot;</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span> karma start karma.conf.js --browsers Chrome --single-run<span class="p">;</span> <span class="k">fi</span></code></pre></div>
+
+<p>I use the if statement in the command to only run the tests on my master branch which for now is fine because I am doing my development on the ionic app in the master branch. This also prevents me from running tests when I check in changes to my gh-pages branch which is the Github Pages branch for the <a href="http://pdsullivan.github.io/ChkBook">project’s web page</a>.</p>
+
+<p>The result looks like this when Codeship runs the tests (and they all pass which does not always happen 😉…).</p>
+
+<p><img src="http://blog.pdsullivan.com/assets/chkbookcodeship.png" alt="Codeship UI" /></p>
+
+<p>Thanks for reading and please comment or contact me if there are any questions or if anything is not working as I described.</p>
+
+  </article>
+
+</div>
+
+      </div>
+    </div>
+
+    
+<div ng-controller="analyticsController as vm">
+
+</div>
+
+<footer class="site-footer">
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">
+        Hosted on <a href="http://pages.github.com"><i class="fa fa-github"></i> GitHub Pages</a> running <a href="http://jekyllrb.com/">Jekyll</a>.
+    </h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col  footer-col-1">
+        <ul class="contact-list">
+          <!--<li>Blog - Patrick Sullivan</li>-->
+
+          <li><a href="http://www.pdsullivan.com"><i class="fa fa-code"></i> Patrick Sullivan</a></li>
+          <li><a href="mailto:patrick@pdsullivan.com"><i class="fa fa-envelope-o"></i> patrick@pdsullivan.com</a></li>
+
+
+
+        </ul>
+      </div>
+
+      <div class="footer-col  footer-col-3">
+        <ul class="social-media-list">
+          
+          <li>
+            <a href="https://github.com/pdsullivan" target="_blank">
+              <i class="fa fa-github"></i>
+
+              <span class="username">pdsullivan</span>
+            </a>
+          </li>
+          
+
+          
+          <li>
+            <a href="https://twitter.com/patsully88" target="_blank">
+              <i class="fa fa-twitter"></i>
+
+              <span class="username">patsully88</span>
+            </a>
+          </li>
+          
+
+          <li>
+            <a href="https://www.instagram.com/patsully88" target="_blank">
+              <i class="fa fa-instagram"></i>
+
+              <span class="username">patsully88</span>
+            </a>
+          </li>
+
+
+            <li>
+              <a href="https://www.linkedin.com/in/patrickdsullivan" target="_blank">
+                <i class="fa fa-linkedin "></i>
+
+                <span class="username">Patrick Sullivan</span>
+              </a>
+            </li>
+
+            <li>
+              <a href="http://stackoverflow.com/users/1483002/drop-table-users" target="_blank">
+                <i class="fa fa-stack-overflow "></i>
+
+                <span class="username">drop table users</span>
+              </a>
+            </li>
+
+
+        </ul>
+      </div>
+
+      <div class="footer-col  footer-col-3">
+        <!--<p class="text"></p>-->
+
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+
+
+
+<script src="/lib/angularjs/angular.min.js"></script>
+
+<script src="/analyticsApp/analyticsApp.js"></script>
+
+    <div class="container">
+  
+  <div id="disqus_thread"></div>
+  <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'blogpdsullivancom'; // required: replace example with your forum shortname
+        var disqus_identifier = '/posts/2014/12/05/ionic-codeship-unit-testing-ci.html';
+        var disqus_title = "Unit Testing an AngularJS Ionic App with Codeship Continuous Integration, Jasmine, and Karma";
+        var disqus_url = 'http://blog.pdsullivan.com/posts/2014/12/05/ionic-codeship-unit-testing-ci.html';
+ 
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+    
+</div>
+
+
+
+  </body>
+
+</html>
